@@ -1,6 +1,7 @@
 
 var result = document.getElementById("result");
 const TOKEN_RATIO = 1.5;
+const TOKEN_RATIO2 = 2.0;
 
 function show(elem) {
     result.value = result.value + elem.value;
@@ -27,10 +28,13 @@ function calc_score() {
         val = Number(document.getElementById(color).value);
         num = Number(document.getElementById(color + "_hand").value)
 
-        if(document.getElementById(color + "_token").checked){
+        if(document.getElementById(color + "_token").checked && document.getElementById(color + "_token2").checked){
 
+            tmp += parseInt(val * num * TOKEN_RATIO2, 10)
+
+        }
+        else if(document.getElementById(color + "_token").checked || document.getElementById(color + "_token2").checked){
             tmp += parseInt(val * num * TOKEN_RATIO, 10)
-
         }
         else{
             tmp += val * num
