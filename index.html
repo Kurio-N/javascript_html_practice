@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Score Calculator</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="counter.css">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- <header style="background-color:gray">Header</header> -->
+  
+    <div class="container-sm">
+        <div class="row justify-content-center">
+            <div class="col-auto-12" style="background-color:darkgray;">
+                Color Value
+            </div>
+        </div>
+
+        <div class="row  justify-content-center">
+            <div class="col-xl-4 col-md-4 col-sm-4"   style="background-color:#E94229;">
+                    
+                <button class="borderless" onclick="decrease('RED')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="nums" id="RED" type="number" value="0">
+                <button class="borderless" onclick="increase('RED')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+                    
+            </div>  
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#5F7CBD;">
+                <button class="borderless" onclick="decrease('BLUE')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="nums" id="BLUE" type="number" value="0">
+                <button class="borderless" onclick="increase('BLUE')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+            </div>
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#3DB374;">
+                <button class="borderless" onclick="decrease('GREEN')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="nums" id="GREEN" type="number" value="0">
+                <button class="borderless" onclick="increase('GREEN')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+            </div>
+        </div>
+
+        <div class="row  justify-content-center">
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#FCCC52;">
+                <button class="borderless" onclick="decrease('YELLOW')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="nums" id="YELLOW" type="number" value="0">
+                <button class="borderless" onclick="increase('YELLOW')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+            </div>
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#595856;">
+                <button class="borderless" onclick="decrease('BLACK')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="nums" id="BLACK" type="number" value="0">
+                <button class="borderless" onclick="increase('BLACK')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+            </div>
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#EFEFEF;">
+                <button class="borderless" onclick="decrease('WHITE')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="nums" id="WHITE" type="number" value="0">
+                <button class="borderless" onclick="increase('WHITE')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+            </div>
+        </div>
+    
+        <!-- 手札の色の数を入力 -->
+        <div class="row justify-content-center">
+            <div class="col-auto-12" style="background-color: darkgray;">
+                Your Hands
+            </div>
+        </div>
+
+        <div class="row  justify-content-center">
+            <div class="col-xl-4 col-md-4 col-sm-4"   style="background-color:#E94229;">
+                    
+                <button class="borderless" onclick="decrease('RED_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="hand" id="RED_hand" type="number" value="0">
+                <button class="borderless" onclick="increase('RED_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+                <span style="display: inline-block;">
+                    <input id="RED_token" type="checkbox" >
+                    <label for="RED_token">Token</label>
+                </span>
+
+            </div>  
+
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#5F7CBD;">
+                <button class="borderless" onclick="decrease('BLUE_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="hand" id="BLUE_hand" type="number" value="0">
+                <button class="borderless" onclick="increase('BLUE_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+                <span style="display: inline-block;">
+                    <input id="BLUE_token" type="checkbox" >
+                    <label for="BLUE_token">Token</label>
+                </span>
+
+            </div>
+
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#3DB374;">
+                <button class="borderless" onclick="decrease('GREEN_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="hand" id="GREEN_hand" type="number" value="0">
+                <button class="borderless" onclick="increase('GREEN_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+                <span style="display: inline-block;">
+                    <input id="GREEN_token" type="checkbox" >
+                    <label for="GREEN_token">Token</label>
+                </span>
+            </div>
+        </div>
+
+        <div class="row  justify-content-center">
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#FCCC52;">
+                <button class="borderless" onclick="decrease('YELLOW_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="hand" id="YELLOW_hand" type="number" value="0">
+                <button class="borderless" onclick="increase('YELLOW_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+                <span style="display: inline-block;">
+                    <input id="YELLOW_token" type="checkbox" >
+                    <label for="YELLOW_token">Token</label>
+                </span>
+            </div>
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#595856;">
+                <button class="borderless" onclick="decrease('BLACK_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="hand" id="BLACK_hand" type="number" value="0">
+                <button class="borderless" onclick="increase('BLACK_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+                <span style="display: inline-block;">
+                    <input id="BLACK_token" type="checkbox" >
+                    <label for="BLACK_token">Token</label>
+                </span>
+            </div>
+            <div class="col-xl-4 col-md-4 col-sm-4" style="background-color:#EFEFEF;">
+                <button class="borderless" onclick="decrease('WHITE_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-minus-fill.svg">
+                </button>
+                <input class="hand" id="WHITE_hand" type="number" value="0">
+                <button class="borderless" onclick="increase('WHITE_hand')">
+                    <img src="./node_modules/bootstrap-icons/icons/file-plus.svg">
+                </button>
+                <span style="display: inline-block;">
+                    <input id="WHITE_token" type="checkbox" >
+                    <label for="WHITE_token">Token</label>
+                </span>
+            </div>
+        </div>
+        
+
+        <div class="row justify-content-center">
+            <div class="col-sm-4 text-center">
+                <button onclick="calc_score()">Calculate!</button>
+            </div>
+        </div>
+    
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <input class="nums" id="result" type="text" value="0">
+            </div>
+        </div>
+    
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

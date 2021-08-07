@@ -1,0 +1,6 @@
+◆ Bootstrapの使い方
+https://techacademy.jp/magazine/6270
+
+◆ HTML + JS + CSSで電卓を作る
+https://qiita.com/rikimaru914/items/3412df78570b48b25858
+
