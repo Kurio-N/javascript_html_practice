@@ -1,7 +1,7 @@
 
 :root{
     --color--vogu-blue: #45449B;
-    --color--vogu-red: #EB325F;
+    --color--vogu-red: #EE396C;
     --color--vogu-yellow: #FFD334;
     --color-vogu-green: #6EC6A6;
     --color-vogu-black: #3B393B; 
@@ -110,3 +110,33 @@ body {
     margin-right: 0px;
 }
 
+.square {
+    width: 100%;
+    position: relative;
+}
+
+.square::before{
+    padding-bottom: 100%;
+    content: "";
+    display: block;
+}
+
+.square-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.card_border{
+    border-top: 0.25rem solid #2c2c2c;
+    border-left: 0rem;
+    border-right: 0rem;
+    border-bottom: 0rem;
+
+}
+
+.fs-1{
+    font-size: 30pt;
+}

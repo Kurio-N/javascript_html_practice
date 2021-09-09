@@ -29,128 +29,168 @@
   
     <main class="calc_main">
   
-        <ul class="nav nav-pills" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="pills-color-tab" data-bs-toggle="pill" data-bs-target="#pills-color" type="button" role="tab" aria-controls="pills-color" aria-selected="true">
-                    色の価値
-                </button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-calc-tab" data-bs-toggle="pill" data-bs-target="#pills-calc" type="button" role="tab" aria-controls="pills-calc" aria-selected="false">
-                    得点計算
-                </button>
-            </li>
-        </ul>
+        <div class="row justify-content-center g-4">
+            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                        <li class="nav-item d-grid col-6" role="presentation">
+                            <button class="nav-link active " id="pills-color-tab" data-bs-toggle="pill" data-bs-target="#pills-color" type="button" role="tab" aria-controls="pills-color" aria-selected="true">
+                                色の価値
+                            </button>
+                        </li>
+                        <li class="nav-item d-grid col-6" role="presentation">
+                            <button class="nav-link" id="pills-calc-tab" data-bs-toggle="pill" data-bs-target="#pills-calc" type="button" role="tab" aria-controls="pills-calc" aria-selected="false">
+                                得点計算
+                            </button>
+                        </li>
+            </ul>
+        </div>
         <div class="tab-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-color" role="tabpanel" aria-labelledby="pills-color-tab">
                  <!-- 1行目 -->
-                <div class="row g-2">
+                <div class="row g-4">
                     <!-- 赤 -->
                     <div class="col-6 col-sm-4">
-                        <div class="card">
-                            <div class="card-header vogu_red">Red</div>
-                            <div class="card-body text-center px-0">
-                                <span style="display: inline-block;">
-                                    <button class="borderless" onclick="decrease('RED')">
-                                        <img src="./img/file-minus-fill.svg" height="20px">
-                                    </button>
-                                    <input class="nums" id="RED" type="number" value="0">
-                                    <button class="borderless" onclick="increase('RED')">
-                                        <img src="./img/file-plus.svg" height="20px">
-                                    </button>
-                                </span>
+                        <div class="square vogu_red">
+                            <div class="card square-content border-0">
+                                <div class="card-body vogu_red text-center border-0" style="height: 80%;">
+                                    RED
+                                    <div class="fs-1 fs-sm-3" id="RED">
+                                        0                                        
+                                    </div>
+                                </div>
+                                <div class="card-body card_border text-center vogu_red px-0">
+                                    <span style="display: inline-block;">
+                                        <button class="borderless" onclick="decrease2('RED')">
+                                            <img src="./img/file-minus-fill.svg" height="20px">
+                                        </button>
+                                        <button class="borderless" onclick="increase2('RED')">
+                                            <img src="./img/file-plus.svg" height="20px">
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- 青 -->
                     <div class="col-6 col-sm-4">
-                        <div class="card">
-                            <div class="card-header vogu_blue">Blue</div>
-                            <div class="card-body text-center px-0">
-                                <span style="display: inline-block;">
-                                    <button class="borderless" onclick="decrease('BLUE')">
-                                        <img src="./img/file-minus-fill.svg" height="20px">
-                                    </button>
-                                    <input class="nums" id="BLUE" type="number" value="0">
-                                    <button class="borderless" onclick="increase('BLUE')">
-                                        <img src="./img/file-plus.svg" height="20px">
-                                    </button>        
-                                </span>
+                        <div class="square vogu_blue">
+                            <div class="card square-content border-0">
+                                <div class="card-body vogu_blue text-center border-0" style="height: 80%;">
+                                    BLUE
+                                    <div class="fs-1 fs-sm-3" id="BLUE">
+                                        0                                        
+                                    </div>
+                                </div>
+                                <div class="card-body card_border text-center vogu_blue px-0">
+                                    <span style="display: inline-block;">
+                                        <button class="borderless" onclick="decrease2('BLUE')">
+                                            <img src="./img/file-minus-fill.svg" height="20px">
+                                        </button>
+                                        <button class="borderless" onclick="increase2('BLUE')">
+                                            <img src="./img/file-plus.svg" height="20px">
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 黄 -->
+                    <div class="col-6 col-sm-4">
+                        <div class="square">
+                            <div class="card square-content border-0">
+                                <div class="card-body vogu_yellow text-center border-0" style="height: 80%;">
+                                    YELLOW
+                                    <div class="fs-1 fs-sm-3" id="YELLOW">
+                                        0                                        
+                                    </div>
+                                </div>
+                                <div class="card-body card_border text-center vogu_yellow px-0">
+                                    <span style="display: inline-block;">
+                                        <button class="borderless" onclick="decrease2('YELLOW')">
+                                            <img src="./img/file-minus-fill.svg" height="20px">
+                                        </button>
+                                        <button class="borderless" onclick="increase2('YELLOW')">
+                                            <img src="./img/file-plus.svg" height="20px">
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- 緑 -->
                     <div class="col-6 col-sm-4">
-                        <div class="card">
-                            <div class="card-header vogu_green">Green</div>
-                            <div class="card-body text-center px-0">
-                                <span style="display: inline-block;">
-                                    <button class="borderless" onclick="decrease('GREEN')">
-                                        <img src="./img/file-minus-fill.svg" height="20px">
-                                    </button>
-                                    <input class="nums" id="GREEN" type="number" value="0">
-                                    <button class="borderless" onclick="increase('GREEN')">
-                                        <img src="./img/file-plus.svg" height="20px">
-                                    </button>        
-                                </span>
-                            </div>
-                        </div>
-                    </div>            
-                    <!-- 黄 -->
-                    <div class="col-6 col-sm-4">
-                        <div class="card">
-                            <div class="card-header vogu_yellow">Yellow</div>
-                            <div class="card-body text-center px-0">
-                                <span style="display: inline-block;">
-                                    <button class="borderless" onclick="decrease('YELLOW')">
-                                        <img src="./img/file-minus-fill.svg" height="20px">
-                                    </button>
-                                    <input class="nums" id="YELLOW" type="number" value="0">
-                                    <button class="borderless" onclick="increase('YELLOW')">
-                                        <img src="./img/file-plus.svg" height="20px">
-                                    </button>        
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 黒 -->
-                    <div class="col-6 col-sm-4">
-                        <div class="card">
-                            <div class="card-header vogu_black">Black</div>
-                            <div class="card-body text-center px-0">
-                                <span style="display: inline-block;">
-                                    <button class="borderless" onclick="decrease('BLACK')">
-                                        <img src="./img/file-minus-fill.svg" height="20px">
-                                    </button>
-                                    <input class="nums" id="BLACK" type="number" value="0">
-                                    <button class="borderless" onclick="increase('BLACK')">
-                                        <img src="./img/file-plus.svg" height="20px">
-                                    </button>        
-                                </span>
+                        <div class="square">
+                            <div class="card square-content border-0">
+                                <div class="card-body card_border vogu_green text-center border-0" style="height: 80%;">
+                                    GREEN
+                                    <div class="fs-1 fs-sm-3" id="GREEN">
+                                        0                                        
+                                    </div>
+                                </div>
+                                <div class="card-body card_border text-center vogu_green px-0">
+                                    <span style="display: inline-block;">
+                                        <button class="borderless" onclick="decrease2('GREEN')">
+                                            <img src="./img/file-minus-fill.svg" height="20px">
+                                        </button>
+                                        <button class="borderless" onclick="increase2('GREEN')">
+                                            <img src="./img/file-plus.svg" height="20px">
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- 白 -->
                     <div class="col-6 col-sm-4">
-                        <div class="card">
-                            <div class="card-header vogu_white">White</div>
-                            <div class="card-body text-center px-0">
-                                <span style="display: inline-block;">
-                                    <button class="borderless" onclick="decrease('WHITE')">
-                                        <img src="./img/file-minus-fill.svg" height="20px">
-                                    </button>
-                                    <input class="nums" id="WHITE" type="number" value="0">
-                                    <button class="borderless" onclick="increase('WHITE')">
-                                        <img src="./img/file-plus.svg" height="20px">
-                                    </button>        
-                                </span>                            
+                        <div class="square">
+                            <div class="card square-content border-0">
+                                <div class="card-body vogu_white text-center border-0" style="height: 80%;">
+                                    WHITE
+                                    <div class="fs-1 fs-sm-3" id="WHITE">
+                                        0                                        
+                                    </div>
+                                </div>
+                                <div class="card-body card_border text-center vogu_white px-0">
+                                    <span style="display: inline-block;">
+                                        <button class="borderless" onclick="decrease2('WHITE')">
+                                            <img src="./img/file-minus-fill.svg" height="20px">
+                                        </button>
+                                        <button class="borderless" onclick="increase2('WHITE')">
+                                            <img src="./img/file-plus.svg" height="20px">
+                                        </button>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>            
+                    </div>
+
+                    <!-- 黒 -->
+                    <div class="col-6 col-sm-4">
+                        <div class="square">
+                            <div class="card square-content border-0">
+                                <div class="card-body vogu_black text-center" style="height: 80%;">
+                                    BLACK
+                                    <div class="fs-1 fs-sm-3" id="BLACK">
+                                        0                                        
+                                    </div>
+                                </div>
+                                <div class="card-body card_border text-center vogu_black px-0">
+                                    <span style="display: inline-block;">
+                                        <button class="borderless" onclick="decrease2('BLACK')">
+                                            <img src="./img/file-minus-fill.svg" height="20px">
+                                        </button>
+                                        <button class="borderless" onclick="increase2('BLACK')">
+                                            <img src="./img/file-plus.svg" height="20px">
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 白 -->
+
                 </div>
             </div>
             <!-- 得点計算 -->
@@ -285,24 +325,24 @@
                             </span>
                         </div>
                     </div>
+                </div>        
+
+                <!-- 計算実行 -->
+                <div class="row">
+                    <button type="button" class="btn btn-secondary col-auto mx-auto" onclick="calc_score()">
+                        Calculate!
+                    </button>
                 </div>
-        
+
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <input class="nums" id="result" type="text" value="0">
+                    </div>
+                </div>
+
             </div>
         </div>
-      
-        <!-- 手札の色の数を入力 -->
-        
-        <div class="row">
-                <button type="button" class="btn btn-secondary col-auto mx-auto" onclick="calc_score()">
-                    Calculate!
-                </button>
-        </div>
-    
-        <div class="row justify-content-center">
-            <div class="col-6">
-                <input class="nums" id="result" type="text" value="0">
-            </div>
-        </div>
+ 
     </div>
 
 </main>

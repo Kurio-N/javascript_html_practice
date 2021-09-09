@@ -15,9 +15,16 @@ function decrease(id) {
     var trg = document.getElementById(id)
     trg.value = new Function("return " + trg.value + "-1")();
 }
-function del() {
-    result.value = '';
+function increase2(id) {
+    var trg = document.getElementById(id)
+    // trg.value = new Function("return 1+" + trg.value)();
+    trg.innerHTML = parseInt(trg.innerHTML) + 1;
 }
+function decrease2(id) {
+    var trg = document.getElementById(id)
+    trg.innerHTML = parseInt(trg.innerHTML) - 1;}
+
+
 function calc_score() {
     const colors = ['RED', 'BLUE', 'GREEN', 'YELLOW', 'WHITE', 'BLACK'];
     var val = 0;
@@ -26,7 +33,7 @@ function calc_score() {
 
     for (const color of colors) {
 
-        val = Number(document.getElementById(color).value);
+        val = Number(parseInt(document.getElementById(color).innerHTML));
         num = Number(document.getElementById(color + "_hand").value)
 
         if(document.getElementById(color + "_token").checked && document.getElementById(color + "_token2").checked){
