@@ -8,7 +8,8 @@ function show(elem) {
 }
 function increase(id) {
     var trg = document.getElementById(id)
-    trg.value = new Function("return 1+" + trg.value)();
+    // trg.value = new Function("return 1+" + trg.value)();
+    trg.value = parseInt(trg.value) + 1;
 }
 function decrease(id) {
     var trg = document.getElementById(id)

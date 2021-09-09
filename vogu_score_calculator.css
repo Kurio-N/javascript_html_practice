@@ -1,4 +1,32 @@
-電卓機能　CSSソースコードCSS
+
+:root{
+    --color--vogu-blue: #45449B;
+    --color--vogu-red: #EB325F;
+    --color--vogu-yellow: #FFD334;
+    --color-vogu-green: #6EC6A6;
+    --color-vogu-black: #3B393B; 
+    --color-vogu-white: #FFFFFF;  
+}
+
+.vogu_blue{
+    background-color: var(--color--vogu-blue);
+}
+.vogu_red{
+    background-color: var(--color--vogu-red);
+}
+.vogu_yellow{
+    background-color: var(--color--vogu-yellow);
+}
+.vogu_green{
+    background-color: var(--color-vogu-green);
+}
+.vogu_black{
+    background-color: var(--color-vogu-black);
+}
+.vogu_white{
+    background-color: var(--color-vogu-white);
+}
+
 .container {
     padding: 30px 0;
     background-color: rgb(241, 239, 239);
