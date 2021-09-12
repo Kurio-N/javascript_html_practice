@@ -34,14 +34,18 @@
   
     <main class="calc_main">
   
+        <div class="row mb-4 justify-content-center">
+            <img src="img/vogu_logo.svg" class="img-fluid col-4 p-auto" alt="vogu_logo"> 
+        </div>
+
         <ul class="nav nav-pills row g-3 mb-5 justify-content-center" id="pills-tab" role="tablist">
                         <li class="nav-item d-grid col-6 col-sm-4" role="presentation">
-                            <button class="nav-link active tab-btn" id="pills-color-tab" data-bs-toggle="pill" data-bs-target="#pills-color" type="button" role="tab" aria-controls="pills-color" aria-selected="true">
+                            <button class="nav-link active tab-btn p-1" id="pills-color-tab" data-bs-toggle="pill" data-bs-target="#pills-color" type="button" role="tab" aria-controls="pills-color" aria-selected="true">
                                 色の価値
                             </button>
                         </li>
                         <li class="nav-item d-grid col-6 col-sm-4" role="presentation">
-                            <button class="nav-link tab-btn" id="pills-calc-tab" data-bs-toggle="pill" data-bs-target="#pills-calc" type="button" role="tab" aria-controls="pills-calc" aria-selected="false">
+                            <button class="nav-link tab-btn p-1" id="pills-calc-tab" data-bs-toggle="pill" data-bs-target="#pills-calc" type="button" role="tab" aria-controls="pills-calc" aria-selected="false">
                                 得点計算
                             </button>
                         </li>
@@ -64,10 +68,10 @@
                                 </div>
                                 <div  style="height: 2%; background-color: #2c2c2c; min-height: 0in;"></div>
                                 <div class="card-body d-flex vogu_red px-0 py-0" style="height: 23%;">
-                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('RED')">
+                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('RED');apply('RED', 'RED_ref')">
                                             <img src="./img/Minus.svg" height="100%">
                                         </button>
-                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('RED')">
+                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('RED');apply('RED', 'RED_ref')">
                                             <img src="./img/PICOL_icon_Plus.svg" height="100%">
                                         </button>
                                 </div>
@@ -89,10 +93,10 @@
                                 </div>
                                 <div  style="height: 2%; background-color: #2c2c2c; min-height: 0in;"></div>
                                 <div class="card-body d-flex vogu_blue px-0 py-0" style="height: 23%;">
-                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('BLUE')">
+                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('BLUE');apply('BLUE', 'BLUE_ref')">
                                             <img src="./img/Minus.svg" height="100%">
                                         </button>
-                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('BLUE')">
+                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('BLUE');apply('BLUE', 'BLUE_ref')">
                                             <img src="./img/PICOL_icon_Plus.svg" height="100%">
                                         </button>
                                 </div>
@@ -113,10 +117,10 @@
                                 </div>
                                 <div  style="height: 2%; background-color: #2c2c2c; min-height: 0in;"></div>
                                 <div class="card-body d-flex vogu_yellow px-0 py-0" style="height: 23%;">
-                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('YELLOW')">
+                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('YELLOW');apply('YELLOW', 'YELLOW_ref')">
                                             <img src="./img/Minus.svg" height="100%">
                                         </button>
-                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('YELLOW')">
+                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('YELLOW');apply('YELLOW', 'YELLOW_ref')">
                                             <img src="./img/PICOL_icon_Plus.svg" height="100%">
                                         </button>
                                 </div>
@@ -138,10 +142,10 @@
                                 </div>
                                 <div  style="height: 2%; background-color: #2c2c2c; min-height: 0in;"></div>
                                 <div class="card-body d-flex vogu_green px-0 py-0" style="height: 23%;">
-                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('GREEN')">
+                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('GREEN');apply('GREEN', 'GREEN_ref')">
                                             <img src="./img/Minus.svg" height="100%">
                                         </button>
-                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('GREEN')">
+                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('GREEN');apply('GREEN', 'GREEN_ref')">
                                             <img src="./img/PICOL_icon_Plus.svg" height="100%">
                                         </button>
                                 </div>
@@ -163,10 +167,10 @@
                                 </div>
                                 <div  style="height: 2%; background-color: #2c2c2c; min-height: 0in;"></div>
                                 <div class="card-body d-flex vogu_white px-0 py-0" style="height: 23%;">
-                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('WHITE')">
+                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('WHITE');apply('WHITE', 'WHITE_ref')">
                                             <img src="./img/Minus.svg" height="100%">
                                         </button>
-                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('WHITE')">
+                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('WHITE');apply('WHITE', 'WHITE_ref')">
                                             <img src="./img/PICOL_icon_Plus.svg" height="100%">
                                         </button>
                                 </div>
@@ -176,22 +180,22 @@
 
                     <!-- 黒 -->
                     <div class="col-6 col-sm-4">
-                        <div class="square ">
-                            <div class="card square-content border-0">
-                                <div class="card-header text-center vogu_black border-0 pt-auto fs-h2" style="height: 20%; border-radius: 0pt;">
+                        <div class="square">
+                            <div class="square-content" style="background-color: transparent;">
+                                <div class="d-flex align-items-center justify-content-center vogu_black fs-h2" style="height: 20%; border-radius: 0pt; border: 0.05rem solid white; border-bottom: 0px;">
                                     BLACK
                                 </div>
-                                <div class="card-body text-center vogu_black border-0 p-auto" style="height: 55%;">
+                                <div class="d-flex align-items-center justify-content-center vogu_black" style="height: 55%;  border: 0.05rem solid white; border-top: 0px;">
                                     <div class="display-1 value" id="BLACK">
                                         0                                        
                                     </div>
                                 </div>
                                 <div  style="height: 2%; background-color: #2c2c2c; min-height: 0in;"></div>
-                                <div class="card-body d-flex vogu_black px-0 py-0" style="height: 23%;">
-                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('BLACK')">
+                                <div class="d-flex vogu_black px-0 py-0" style="height: 23%; border: 0.05rem solid white;">
+                                        <button class="borderless p-1 me-auto ms-3" onclick="decrease2('BLACK');apply('BLACK', 'BLACK_ref')">
                                             <img src="./img/Minus.svg" height="100%">
                                         </button>
-                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('BLACK')">
+                                        <button class="borderless p-1 ms-auto me-3" onclick="increase2('BLACK');apply('BLACK', 'BLACK_ref')">
                                             <img src="./img/PICOL_icon_Plus.svg" height="100%">
                                         </button>
                                 </div>
@@ -203,6 +207,56 @@
             </div>
             <!-- 得点計算 -->
             <div class="tab-pane fade" id="pills-calc" role="tabpanel" aria-labelledby="pills-calc-tab">
+                <!-- 色の価値を表示 -->
+                <div class="row justify-content-center mb-3 g-3">
+                    <div class="col-2">
+                        <div class="square p-auto">
+                            <div class="square-content d-flex vogu_red align-items-center justify-content-center" style="font-size: 2rem;" id="RED_ref">
+                                0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="square p-auto">
+                            <div class="square-content d-flex vogu_blue align-items-center justify-content-center" style="font-size: 2rem;" id="BLUE_ref">
+                                0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="square p-auto">
+                            <div class="square-content d-flex vogu_yellow align-items-center justify-content-center" style="font-size: 2rem;" id="YELLOW_ref">
+                                0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="square p-auto">
+                            <div class="square-content d-flex vogu_green align-items-center justify-content-center" style="font-size: 2rem;" id="GREEN_ref">
+                                0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="square p-auto">
+                            <div class="square-content d-flex vogu_white align-items-center justify-content-center" style="font-size: 2rem;" id="WHITE_ref">
+                                0
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="square p-auto">
+                            <div class="square-content d-flex vogu_black align-items-center justify-content-center" style="font-size: 2rem;" id="BLACK_ref">
+                                0
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 手札 -->
+
+                <!-- Player 1 -->
                 <div class="row  justify-content-center">
                     <div class="col-6 col-sm-4 text-center vogu_red">
                         <div class="hand_zone">
