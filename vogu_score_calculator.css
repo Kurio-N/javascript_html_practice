@@ -4,35 +4,40 @@
     --color--vogu-red: #EE396C;
     --color--vogu-yellow: #FFD334;
     --color-vogu-green: #6EC6A6;
-    --color-vogu-black: #3B393B; 
-    --color-vogu-white: #EFEFEF;  
+    --color-vogu-black: #3B393B;
+    --color-vogu-white: white;  
+    --color-vogu-lblack: #58595B;
 }
 
 .vogu_blue{
     background-color: var(--color--vogu-blue);
-    color: white;
+    color: var(--color-vogu-white);
 }
 .vogu_red{
     background-color: var(--color--vogu-red);
-    color: white;
+    color: var(--color-vogu-white);
 }
 .vogu_yellow{
     background-color: var(--color--vogu-yellow);
-    color: white;
+    color: var(--color-vogu-white);
 }
 .vogu_green{
     background-color: var(--color-vogu-green);
-    color: white;
+    color: var(--color-vogu-white);
 }
 .vogu_black{
     background-color: var(--color-vogu-black);
-    color: white;
+    color: var(--color-vogu-white);
 }
 .vogu_white{
     background-color: var(--color-vogu-white)!important;
-    color: black!important;
+    color: var(--color-vogu-black)!important;
 }
 
+.vogu_lblack{
+    background-color: var(--color-vogu-lblack);
+    color: var(--color-vogu-white);
+}
 
 body {
     height: 100%;
@@ -40,7 +45,7 @@ body {
     align-items: center;
     padding-top: 10px;
     padding-bottom: 40px;
-    background-color: #2c2c2c;
+    background-color: var(--color-vogu-black);
   }
 
 .calc_main {
@@ -106,7 +111,7 @@ body {
     margin-bottom: 6px;
 }
 
-/* 価値の表示部分 */
+/***** 価値表示タブ *****/
 .card-body{
     margin-left: 0px;
     margin-right: 0px;
@@ -135,11 +140,20 @@ body {
     border-radius: 0px;
 }
 
-
 .value{
-    font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 4.0rem;
 }
 
+/* 計算ボタン */
+.btn-calc{
+    background-color: var(--color-vogu-lblack);
+    color: var(--color-vogu-white);
+    border-radius: 0pt;
+    border: 0.05rem solid white
+}
+
+/***** タブボタン *****/
 /* タブ切り替えボタン */
 .tab-btn{
     font-family: 'Noto Sans JP', sans-serif;
@@ -147,12 +161,12 @@ body {
 
 .tab-btn:active{
     background-color: white!important;
-    color: #2c2c2c!important;
+    color: var(--color-vogu-black)!important;
 }
 
 .tab-btn:focus{
     background-color: white;
-    color: #2c2c2c;
+    color: var(--color-vogu-black);
 }
 
 .nav-link{
@@ -161,13 +175,71 @@ body {
 
 .nav-pills .nav-link.active{
     background-color: white;
-    color: #2c2c2c;   
+    color: var(--color-vogu-black);   
   }
   
   /* タブの文字色変更 */
 .nav-pills .nav-link{
-    background-color: #2c2c2c;
+    background-color: var(--color-vogu-black);
     border: 0.05rem solid white;
     color: white;
   }
 
+  .chkbox {
+	width:			50%;			/* ボックスの横幅 */
+	height:			50%;			/* ボックスの縦幅 */
+	background-color:	#fff;
+	border-radius:0px;
+}
+
+/***** チェックボックス *****/
+
+/* 元々のチェックボックス（非表示） */
+.mycheckbox input[type="checkbox"]{
+    display: none;
+}
+/* チェックボックスの代わりを成すラベル */
+.mycheckbox input[type="checkbox"]+label{
+    display: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+}
+/* ラベルの左に表示させる正方形のボックス□ */
+.mycheckbox input[type="checkbox"]+label::before{
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    left: 0;
+    top: 50%;
+    border: 0px;
+    background-color: #FFF; /* 背景の色変更 お好きな色を */
+}
+/* チェックが入った時のレ点 */
+.mycheckbox input[type="checkbox"]:checked+label::after{
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 18px;
+    height: 9px;
+    margin-top: -9px;
+    top: 50%;
+    left: 3px;
+    transform: rotate(-45deg);
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-color:  #3B393B; /* チェックの色変更 お好きな色を */
+}
+
+.header{
+    font-size: 1.3rem; 
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1em;
+}
