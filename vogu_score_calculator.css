@@ -145,6 +145,13 @@ body {
     font-size: 4.0rem;
 }
 
+/* プラスボタンとマイナスボタン */
+.plusminus{
+    height: 100%;
+    width: auto;
+    
+}
+
 /* 計算ボタン */
 .btn-calc{
     background-color: var(--color-vogu-lblack);
