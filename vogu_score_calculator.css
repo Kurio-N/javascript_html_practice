@@ -9,6 +9,8 @@
     --color-vogu-lblack: #58595B;
 }
 
+
+/***** 基本の色の設定 *****/
 .vogu_blue{
     background-color: var(--color--vogu-blue);
     color: var(--color-vogu-white);
@@ -33,7 +35,6 @@
     background-color: var(--color-vogu-white)!important;
     color: var(--color-vogu-black)!important;
 }
-
 .vogu_lblack{
     background-color: var(--color-vogu-lblack);
     color: var(--color-vogu-white);
@@ -61,21 +62,6 @@ body {
     background-color: rgb(241, 239, 239);
 } */
 
-.nums{
-    height: 40px;
-    width: 40px;
-    text-align: center;
-}
-
-.hand{
-    width: 40px;
-    text-align: center;   
-}
-
-#result {
-    width: 100%;
-    border: solid 1.5px;
-}
 
 /* .row {
     margin-bottom: 10px;
@@ -102,62 +88,7 @@ body {
     margin-right: auto;
 }
 
-.hand_zone{
-    margin-top: 8px;
-    margin-bottom: 4px;
-}
 
-.token_zone{
-    margin-bottom: 6px;
-}
-
-/***** 価値表示タブ *****/
-.card-body{
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-.square {
-    width: 100%;
-    position: relative;
-}
-
-.square::before{
-    padding-bottom: 100%;
-    content: "";
-    display: block;
-}
-
-.square-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-.card{
-    border-radius: 0px;
-}
-
-.value{
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 4.0rem;
-}
-
-/* プラスボタンとマイナスボタン */
-.plusminus{
-    height: 75%;
-    width: auto;
-}
-
-/* 計算ボタン */
-.btn-calc{
-    background-color: var(--color-vogu-lblack);
-    color: var(--color-vogu-white);
-    border-radius: 0pt;
-    border: 0.05rem solid white
-}
 
 /***** タブボタン *****/
 /* タブ切り替えボタン */
@@ -191,11 +122,79 @@ body {
     color: white;
   }
 
-  .chkbox {
-	width:			50%;			/* ボックスの横幅 */
-	height:			50%;			/* ボックスの縦幅 */
-	background-color:	#fff;
-	border-radius:0px;
+
+/***** 価値表示タブ *****/
+.card-body{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.square {
+    width: 100%;
+    position: relative;
+}
+
+.square::before{
+    padding-bottom: 100%;
+    content: "";
+    display: block;
+}
+
+.square-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.header{
+    font-size: 1.3rem; 
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.card{
+    border-radius: 0px;
+}
+
+.value{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 4.0rem;
+}
+
+/* プラスボタンとマイナスボタン */
+.plusminus{
+    height: 75%;
+    width: auto;
+}
+
+/***** 得点計算タブ *****/
+
+/* 色の価値を表示する */
+
+.value-ref{
+    font-size: 2.0rem;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.hand{
+    width: 40px;
+    text-align: center;   
+}
+
+#result {
+    width: 100%;
+    border: solid 1.5px;
+}
+
+.hand_zone{
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.token_zone{
+    margin-bottom: 6px;
 }
 
 /***** チェックボックス *****/
@@ -244,8 +243,18 @@ body {
     border-color:  #3B393B; /* チェックの色変更 お好きな色を */
 }
 
-.header{
-    font-size: 1.3rem; 
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.1em;
+
+.chkbox {
+	width:			50%;			/* ボックスの横幅 */
+	height:			50%;			/* ボックスの縦幅 */
+	background-color:	#fff;
+	border-radius:0px;
+}
+
+/* 計算ボタン */
+.btn-calc{
+    background-color: var(--color-vogu-lblack);
+    color: var(--color-vogu-white);
+    border-radius: 0pt;
+    border: 0.05rem solid white
 }
