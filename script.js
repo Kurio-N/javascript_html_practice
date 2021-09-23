@@ -2,10 +2,8 @@
 var result = document.getElementById("result");
 const TOKEN_RATIO = 1.5;
 const TOKEN_RATIO2 = 2.0;
+const colors = ['RED', 'BLUE', 'GREEN', 'YELLOW', 'WHITE', 'BLACK'];
 
-function show(elem) {
-    result.value = result.value + elem.value;
-}
 function increase(id) {
     var trg = document.getElementById(id);
     // trg.value = new Function("return 1+" + trg.value)();
@@ -25,6 +23,7 @@ function decrease2(id) {
     trg.innerHTML = parseInt(trg.innerHTML) - 1;
 }
 
+// 得点計算画面に反映させる
 function apply(id1, id2){
     var trg1 = document.getElementById(id1);
     var trg2 = document.getElementById(id2);
@@ -35,7 +34,7 @@ function apply(id1, id2){
 
 
 function calc_score() {
-    const colors = ['RED', 'BLUE', 'GREEN', 'YELLOW', 'WHITE', 'BLACK'];
+
     var val = 0;
     var num = 0;
     var tmp = 0;
