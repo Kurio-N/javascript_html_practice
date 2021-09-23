@@ -177,8 +177,13 @@ body {
 }
 
 /* プラスボタンとマイナスボタン */
-.plusminus{
+.plusminus-value{
     height: 75%;
+    width: auto;
+}
+
+.plusminus-hand{
+    height: 45%;
     width: auto;
 }
 
@@ -244,21 +249,21 @@ body {
 
 /***** チェックボックス *****/
 
-/* 元々のチェックボックス（非表示） */
+/* 元々のチェックボックス（非表示）
 .mycheckbox input[type="checkbox"]{
     display: none;
 }
 /* チェックボックスの代わりを成すラベル */
-.mycheckbox input[type="checkbox"]+label{
+/* .mycheckbox input[type="checkbox"]+label{
     display: none;
     cursor: pointer;
     display: inline-block;
     position: relative;
     /* padding-left: 10px;
     padding-right: 10px; */
-}
+/* } */
 /* ラベルの左に表示させる正方形のボックス□ */
-.mycheckbox input[type="checkbox"]+label::before{
+/* .mycheckbox input[type="checkbox"]+label::before{
     content: "";
     position: absolute;
     display: block;
@@ -270,31 +275,71 @@ body {
     top: 50%;
     border: 0px;
     background-color: #FFF; /* 背景の色変更 お好きな色を */
-}
+/* }  */
 /* チェックが入った時のレ点 */
-.mycheckbox input[type="checkbox"]:checked+label::after{
-    content: "";
+/* .mycheckbox input[type="checkbox"]:checked+label::after{ */
+    /* content: ""; */
+    /* position: absolute; */
+    /* display: block; */
+    /* box-sizing: border-box; */
+    /* width: 18px; */
+    /* height: 9px; */
+    /* margin-top: -9px; */
+    /* top: 50%; */
+    /* left: 3px; */
+    /* transform: rotate(-45deg); */
+    /* border-bottom: 3px solid; */
+    /* border-left: 3px solid; */
+    /* border-color:  #3B393B; チェックの色変更 お好きな色を */
+/* } */
+
+
+/* .chkbox { */
+	/* width:			50%;			ボックスの横幅 */
+	/* height:			50%;			ボックスの縦幅 */
+	/* background-color:	#fff; */
+	/* border-radius:0px; */
+/* } */
+.checkbox label:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  .checkbox .cr {
+    position: relative;
+    display: inline-block;
+    border: 0px;
+    background-color: var(--color-vogu-white);
+    border-radius: 0em;
+    width: 2em;
+    height: 2em;
+  }
+  
+  .checkbox .cr .cr-icon {
     position: absolute;
-    display: block;
-    box-sizing: border-box;
-    width: 18px;
-    height: 9px;
-    margin-top: -9px;
+    font-size: .8em;
+    line-height: 0;
     top: 50%;
-    left: 3px;
-    transform: rotate(-45deg);
-    border-bottom: 3px solid;
-    border-left: 3px solid;
-    border-color:  #3B393B; /* チェックの色変更 お好きな色を */
-}
+    left: 15%;
+  }
+  
+  .checkbox label input[type="checkbox"] {
+    display: none;
+  }
+  
+  .checkbox label input[type="checkbox"]+.cr>.cr-icon {
+    opacity: 0;
+  }
+  
+  .checkbox label input[type="checkbox"]:checked+.cr>.cr-icon {
+    opacity: 1;
+  }
+  
+  .checkbox label input[type="checkbox"]:disabled+.cr {
+    opacity: .5;
+  }
 
-
-.chkbox {
-	width:			50%;			/* ボックスの横幅 */
-	height:			50%;			/* ボックスの縦幅 */
-	background-color:	#fff;
-	border-radius:0px;
-}
 
 /* 計算ボタン */
 .btn-calc{

@@ -64,7 +64,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
+                リセットします？
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -108,10 +108,10 @@
                                 <div class="vogu_black" style="height: 2%; min-height: 0in;"></div>
                                 <div class="d-flex align-items-center vogu_red px-3 py-0" style="height: 23%; border: 0px;">
                                         <button class="borderless p-0 me-auto h-100" onclick="decrease2('RED');apply('RED', 'RED_ref')">
-                                            <img src="./img/minus.svg" class="plusminus">
+                                            <img src="./img/minus.svg" class="plusminus-value">
                                         </button>
                                         <button class="borderless p-0 ms-auto h-100" onclick="increase2('RED');apply('RED', 'RED_ref')">
-                                            <img src="./img/plus.svg" class="plusminus">
+                                            <img src="./img/plus.svg" class="plusminus-value">
                                         </button>
                                 </div>
                             </div>
@@ -133,10 +133,10 @@
                                 <div class="vogu_black" style="height: 2%; min-height: 0in;"></div>
                                 <div class="d-flex align-items-center vogu_blue px-3 py-0" style="height: 23%; border: 0px;">
                                         <button class="borderless p-0 me-auto h-100" onclick="decrease2('BLUE');apply('BLUE', 'BLUE_ref')">
-                                            <img src="./img/minus.svg" class="plusminus">
+                                            <img src="./img/minus.svg" class="plusminus-value">
                                         </button>
                                         <button class="borderless p-0 ms-auto h-100" onclick="increase2('BLUE');apply('BLUE', 'BLUE_ref')">
-                                            <img src="./img/plus.svg" class="plusminus">
+                                            <img src="./img/plus.svg" class="plusminus-value">
                                         </button>
                                 </div>
                             </div>
@@ -158,10 +158,10 @@
                                 <div class="vogu_black" style="height: 2%; min-height: 0in;"></div>
                                 <div class="d-flex align-items-center vogu_yellow px-3 py-0" style="height: 23%; border: 0px;">
                                         <button class="borderless p-0 me-auto h-100" onclick="decrease2('YELLOW');apply('YELLOW', 'YELLOW_ref')">
-                                            <img src="./img/minus.svg" class="plusminus">
+                                            <img src="./img/minus.svg" class="plusminus-value">
                                         </button>
                                         <button class="borderless p-0 ms-auto h-100" onclick="increase2('YELLOW');apply('YELLOW', 'YELLOW_ref')">
-                                            <img src="./img/plus.svg" class="plusminus">
+                                            <img src="./img/plus.svg" class="plusminus-value">
                                         </button>
                                 </div>
                             </div>
@@ -183,10 +183,10 @@
                                 <div class="vogu_black" style="height: 2%; min-height: 0in;"></div>
                                 <div class="d-flex align-items-center vogu_green px-3 py-0" style="height: 23%; border: 0px;">
                                         <button class="borderless p-0 me-auto h-100" onclick="decrease2('GREEN');apply('GREEN', 'GREEN_ref')">
-                                            <img src="./img/minus.svg" class="plusminus">
+                                            <img src="./img/minus.svg" class="plusminus-value">
                                         </button>
                                         <button class="borderless p-0 ms-auto h-100" onclick="increase2('GREEN');apply('GREEN', 'GREEN_ref')">
-                                            <img src="./img/plus.svg" class="plusminus">
+                                            <img src="./img/plus.svg" class="plusminus-value">
                                         </button>
                                 </div>
                             </div>
@@ -208,10 +208,10 @@
                                 <div class="vogu_black" style="height: 2%; min-height: 0in;"></div>
                                 <div class="d-flex align-items-center vogu_white px-3 py-0" style="height: 23%; border: 0px;">
                                         <button class="borderless p-0 me-auto h-100" onclick="decrease2('WHITE');apply('WHITE', 'WHITE_ref')">
-                                            <img src="./img/minus_bk.svg" class="plusminus">
+                                            <img src="./img/minus_bk.svg" class="plusminus-value">
                                         </button>
                                         <button class="borderless p-0 ms-auto h-100" onclick="increase2('WHITE');apply('WHITE', 'WHITE_ref')">
-                                            <img src="./img/plus_bk.svg" class="plusminus">
+                                            <img src="./img/plus_bk.svg" class="plusminus-value">
                                         </button>
                                 </div>
                             </div>
@@ -233,10 +233,10 @@
                                 <div class="vogu_black" style="height: 2%; min-height: 0in;"></div>
                                 <div class="d-flex  align-items-center vogu_black px-3 py-0" style="height: 23%; border: 0.05rem solid white;">
                                         <button class="borderless p-0 me-auto h-100" onclick="decrease2('BLACK');apply('BLACK', 'BLACK_ref')">
-                                            <img src="./img/minus.svg" class="plusminus">
+                                            <img src="./img/minus.svg" class="plusminus-value">
                                         </button>
                                         <button class="borderless p-0 ms-auto h-100" onclick="increase2('BLACK');apply('BLACK', 'BLACK_ref')">
-                                            <img src="./img/plus.svg" class="plusminus">
+                                            <img src="./img/plus.svg" class="plusminus-value">
                                         </button>
                                 </div>
                             </div>
@@ -303,21 +303,37 @@
                     プレイヤー1
                 </div>
 
-                <div class="d-flex row g-3 mb-3 justify-content-between">
-                    <div class="d-flex vogu_red align-items-center" style="width: 53%;">
-                        <div class="d-flex" style="width: 27.21%;">
+                <!-- 説明 -->
+                <div class="row g-3 mb-3 justify-content-between mx-0 vogu_black">
+                    <div class="d-flex align-items-center justify-content-center p-0" style="width: 51%;">
+                        <div class="d-flex vogu_green" style="width: 30.41%;">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%;">
+                            <img src="img/shoe.svg" style="height: 1em; margin-right: 0.5em;"> トークン
+                        </div>
+                    </div>                    
+                    <div class="d-flex align-items-center justify-content-center p-0" style="width: 47%;">
+                        <img src="img/triangle.svg" style="height: 1em; margin-right: 0.5em;"> 個数
+                    </div>
+                </div>                
+
+                <!-- 赤 -->
+                <div class="row g-3 mb-3 justify-content-between mx-0">
+                    <div class="d-flex vogu_red align-items-center p-0" style="width: 51%;">
+                        <div class="d-flex vogu_red" style="width: 30.41%;">
                             <div class="square">
-                                <div class="square-content d-flex vogu_red align-items-center justify-content-start" style="font-size: 3rem;font-family: 'Poppins', sans-serif; width: 25%;">
+                                <div class="square-content d-flex align-items-center justify-content-start p-1" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
                                     R
                                 </div>
                             </div>
                         </div>
-                        <div class="d-flex align-items-center justify-content-center" style="width: 75%;">
-                            <div class="d-flex vogu_red align-items-center justify-content-center" style="font-size: 2rem;">
-                                <div class="mycheckbox d-flex align-items-center justify-content-center">
-                                    <input id="sample1" value="1" type="checkbox" checked><label for="sample1"></label>
-                                </div>
-                            </div>
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%;">
+                            <div class="checkbox">
+                                <label>
+                                 <input type="checkbox" value="" id="sample1">
+                                 <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                 </label>
+                              </div>
                             <div class="d-flex vogu_red align-items-center justify-content-center" style="font-size: 2rem;">
                                 <div class="mycheckbox d-flex align-items-center justify-content-center">
                                     <input id="sample2" value="1" type="checkbox" checked><label for="sample2"></label>
@@ -326,87 +342,36 @@
                         </div>
                     </div>
 
-                    <div class="d-flex align-items-center justify-content-end" style="width: 47%;">
+                    <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%;">
                         <div class="d-flex" style="width: 33%;">
                             <div class="square p-auto">
-                                <div class="square-content d-flex vogu_red align-items-center justify-content-center " id="RED_ref">
-                                    <button class="borderless p-0 h-100" onclick="decrease2('BLACK');apply('BLACK', 'BLACK_ref')">
-                                        <img src="./img/minus.svg" class="plusminus">
+                                <div class="square-content d-flex vogu_red align-items-center justify-content-center ">
+                                    <button class="borderless p-0 h-100" onclick="decrease2('RED_hand');">
+                                        <img src="./img/minus.svg" class="plusminus-hand">
                                     </button>
                                 </div>
                             </div>
                         </div> 
                         <div class="d-flex" style="width: 33%;">
                             <div class="square">
-                                <div class="square-content d-flex vogu_white value-ref align-items-center justify-content-center" id="RED_ref">
+                                <div class="square-content d-flex vogu_white value-ref align-items-center justify-content-center" id="RED_hand">
                                     0
                                 </div>
                             </div>
                         </div> 
                         <div class="d-flex vogu_red" style="width: 33%;">
                             <div class="square p-auto">
-                                <div class="square-content d-flex vogu_red align-items-center justify-content-center " id="RED_ref">
-                                    <button class="borderless p-0 h-100" onclick="decrease2('BLACK');apply('BLACK', 'BLACK_ref')">
-                                        <img src="./img/plus.svg" class="plusminus">
+                                <div class="square-content d-flex vogu_red align-items-center justify-content-center ">
+                                    <button class="borderless p-0 h-100" onclick="increase2('RED_hand');">
+                                        <img src="./img/plus.svg" class="plusminus-hand">
                                     </button>
-                                </div>                            </div>
+                                </div>                            
+                            </div>
                         </div> 
 
                     </div>
-
                 </div>
 
-                <!-- <div class="row justify-content-center g-3">
-                    <div col-12 col-md-6>
-                        <div class="row justfy-content-center g-3"> 
-                            <div class="col-6">
-                                <div class="row g-3">
-                                    <div class="col-4">
-                                        <div class="d-flex vogu_red align-items-center justify-content-center" style="font-size: 2rem;font-family: 'Poppins', sans-serif;">
-                                            R
-                                        </div>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="d-flex vogu_red align-items-center justify-content-center" style="font-size: 2rem;">
-                                            <div class="mycheckbox d-flex align-items-center justify-content-center">
-                                                <input id="sample1" value="1" type="checkbox" checked><label for="sample1"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="row">
-                                    <div class="col-4">
-                                            <div class="d-flex vogu_red align-items-center justify-content-center">
-                                                <button class="borderless p-0 h-100" onclick="decrease2('RED_hand');">
-                                                    <img src="./img/minus.svg" class="plusminus">
-                                                </button>
-                                            </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="square p-auto">
-                                            <div class="square-content d-flex vogu_white align-items-center justify-content-center" style="font-size: 2rem;" id="RED_hand">
-                                                0
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="square">
-                                            <div class="square-content d-flex vogu_red align-items-center justify-content-center">
-                                                <button class="borderless p-1 m-auto" onclick="increase2('RED_hand');">
-                                                    <img src="./img/plus.svg" class="plusminus">
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>    
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div> -->
 
                 <div class="row  justify-content-center">
                     <div class="col-6 col-sm-4 text-center vogu_red">
@@ -540,8 +505,12 @@
                     </div>
                 </div>        
 
+                <div class="player-num">
+                    <img src="img/add_player.svg" style="height: 3em;">
+                </div>
+
                 <!--====== 計算実行 ======-->
-                <div class="row">
+                <div class="row g-3 my-3">
                     <button type="button" class="btn col-auto mx-auto btn-calc" onclick="calc_score()">
                         CALCULATE!
                     </button>
