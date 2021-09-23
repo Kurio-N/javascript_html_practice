@@ -9,6 +9,12 @@
     --color-vogu-lblack: #58595B;
 }
 
+/***** 諸々の設定 *****/
+/* iOS safariでダブルタップしたときに拡大するのを防ぐ */
+html{
+    touch-action: manipulation;
+}
+
 
 /***** 基本の色の設定 *****/
 .vogu_blue{
