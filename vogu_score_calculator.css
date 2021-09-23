@@ -178,6 +178,38 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
+/* プレイヤーN 表示 */
+.player-num {
+    display: flex;
+    align-items: center; /* 垂直中心 */
+    justify-content: center; /* 水平中心 */
+    color: var(--color-vogu-white);
+    font-size: 1.3rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: auto;
+    white-space: nowrap;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .player-num:before {
+    border-top: 1px solid var(--color-vogu-white);
+    content: "";
+    width: 100%; /* 線の長さ */
+  }
+  .player-num:after {
+    border-top: 1px solid var(--color-vogu-white);
+    content: "";
+    width: 100% /* 線の長さ */
+  }
+  .player-num:before {
+    margin-right: 1em; /* 文字の右隣 */
+  }
+  .player-num:after {
+    margin-left: 1em; /* 文字の左隣 */
+  }
+  
+
+
 .hand{
     width: 40px;
     text-align: center;   
