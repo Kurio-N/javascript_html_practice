@@ -95,6 +95,13 @@ body {
 }
 
 
+/**** モーダル（ポップアップの設定）****/
+.modal-content{
+    background-color: var(--color-vogu-black)!important;
+    color: var(--color-vogu-white)!important;
+    border-radius: 0px;
+}
+
 
 /***** タブボタン *****/
 /* タブ切り替えボタン */
