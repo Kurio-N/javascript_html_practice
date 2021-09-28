@@ -263,7 +263,7 @@ body {
 
 .check-btns label {
     position: relative;
-    padding-left: 25px;
+    /* padding-left: 25px; */
     cursor: pointer;
     height: 50%;
     width: 50%;
