@@ -44,12 +44,12 @@ function calc_score() {
         val = Number(parseInt(document.getElementById(color).innerHTML));
         num = Number(document.getElementById(color + "_hand").value)
 
-        if(document.getElementById(color + "_token").checked && document.getElementById(color + "_token2").checked){
+        if(document.getElementById(color + "_token1").checked && document.getElementById(color + "_token2").checked){
 
             tmp += parseInt(val * num * TOKEN_RATIO2, 10)
 
         }
-        else if(document.getElementById(color + "_token").checked || document.getElementById(color + "_token2").checked){
+        else if(document.getElementById(color + "_token1").checked || document.getElementById(color + "_token2").checked){
             tmp += parseInt(val * num * TOKEN_RATIO, 10)
         }
         else{
