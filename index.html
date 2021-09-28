@@ -307,20 +307,21 @@
                     <div class="d-flex align-items-center justify-content-center p-0" style="width: 51%;">
                         <div class="d-flex vogu_green" style="width: 30.41%;">
                         </div>
-                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; letter-spacing: 0.2rem;vertical-align: middle;">
                             <img src="img/shoe.svg" style="height: 1em; margin-right: 0.5em;"> トークン
                         </div>
                     </div>                    
-                    <div class="d-flex align-items-center justify-content-center p-0" style="width: 47%;">
+                    <div class="d-flex align-items-center justify-content-center p-0" style="width: 47%;letter-spacing: 0.2rem;vertical-align: middle;">
                         <img src="img/triangle.svg" style="height: 1em; margin-right: 0.5em;"> 個数
                     </div>
                 </div>                
 
                 <!-- 赤 -->
                 <div class="row g-3 mb-3 justify-content-between mx-0">
+                    <!-- 左部分 -->
                     <div class="d-flex vogu_red align-items-center p-0" style="width: 51%;">
                         <!-- 色のイニシャル -->
-                        <div class="d-flex vogu_red" style="width: 30.41%;">
+                        <div class="d-flex" style="width: 30.41%;">
                             <div class="square">
                                 <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
                                     R
@@ -328,7 +329,7 @@
                             </div>
                         </div>
                         <!-- チェックボックス -->
-                        <div class="d-flex vogu_red align-items-center justify-content-center" style="width: 69.59%; height: 100%;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; height: 100%;">
                             <!-- 1個目 -->
                             <div class="d-flex align-items-center justify-content-center p-0 check-btns me-2">
                                 <input type="checkbox" value="1" name="check" id="RED_token1">
@@ -341,12 +342,12 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- 右部分 -->
                     <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%;">
                         <div class="d-flex" style="width: 33%;">
                             <div class="square p-auto">
                                 <div class="square-content d-flex vogu_red align-items-center justify-content-center " >
-                                    <button class="borderless p-0 h-100" onclick="decrease2('RED_hand');">
+                                    <button class="borderless p-0 h-100 w-100" onclick="decrease2('RED_hand');">
                                         <img src="./img/minus.svg" class="plusminus-hand">
                                     </button>
                                 </div>
@@ -362,19 +363,298 @@
                         <div class="d-flex vogu_red" style="width: 33%;">
                             <div class="square p-auto">
                                 <div class="square-content d-flex vogu_red align-items-center justify-content-center ">
-                                    <button class="borderless p-0 h-100" onclick="increase2('RED_hand');">
+                                    <button class="borderless p-0 h-100 w-100" onclick="increase2('RED_hand');">
                                         <img src="./img/plus.svg" class="plusminus-hand">
                                     </button>
                                 </div>                            
                             </div>
                         </div> 
-
                     </div>
                 </div>
 
+                <!-- 青 -->
+                <div class="row g-3 mb-3 justify-content-between mx-0">
+                    <!-- 左部分 -->
+                    <div class="d-flex vogu_blue align-items-center p-0" style="width: 51%;">
+                        <!-- 色のイニシャル -->
+                        <div class="d-flex" style="width: 30.41%;">
+                            <div class="square">
+                                <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
+                                    B
+                                </div>
+                            </div>
+                        </div>
+                        <!-- チェックボックス -->
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; height: 100%;">
+                            <!-- 1個目 -->
+                            <div class="d-flex align-items-center justify-content-center p-0 check-btns me-2">
+                                <input type="checkbox" value="1" name="check" id="BLUE_token1">
+                                <label for="BLUE_token1"></label>
+                            </div>
+                            <!-- 2個目 -->
+                            <div class="check-btns d-flex align-items-center justify-content-center p-0 ms-2">
+                                <input type="checkbox" value="2" name="check" id="BLUE_token2">
+                                <label for="BLUE_token2"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右部分 -->
+                    <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%;">
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_blue align-items-center justify-content-center " >
+                                    <button class="borderless p-0 h-100 w-100" onclick="decrease2('BLUE_hand');">
+                                        <img src="./img/minus.svg" class="plusminus-hand">
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square">
+                                <div class="square-content d-flex vogu_white value-ref align-items-center justify-content-center" id="BLUE_hand">
+                                    0
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex vogu_blue" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_blue align-items-center justify-content-center ">
+                                    <button class="borderless p-0 h-100 w-100" onclick="increase2('BLUE_hand');">
+                                        <img src="./img/plus.svg" class="plusminus-hand">
+                                    </button>
+                                </div>                            
+                            </div>
+                        </div> 
+                    </div>
+                </div>
 
+                <!-- 黄 -->
+                <div class="row g-3 mb-3 justify-content-between mx-0">
+                    <!-- 左部分 -->
+                    <div class="d-flex vogu_yellow align-items-center p-0" style="width: 51%;">
+                        <!-- 色のイニシャル -->
+                        <div class="d-flex" style="width: 30.41%;">
+                            <div class="square">
+                                <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
+                                    R
+                                </div>
+                            </div>
+                        </div>
+                        <!-- チェックボックス -->
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; height: 100%;">
+                            <!-- 1個目 -->
+                            <div class="d-flex align-items-center justify-content-center p-0 check-btns me-2">
+                                <input type="checkbox" value="1" name="check" id="YELLOW_token1">
+                                <label for="YELLOW_token1"></label>
+                            </div>
+                            <!-- 2個目 -->
+                            <div class="check-btns d-flex align-items-center justify-content-center p-0 ms-2">
+                                <input type="checkbox" value="2" name="check" id="YELLOW_token2">
+                                <label for="YELLOW_token2"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右部分 -->
+                    <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%;">
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_yellow align-items-center justify-content-center " >
+                                    <button class="borderless p-0 h-100 w-100" onclick="decrease2('YELLOW_hand');">
+                                        <img src="./img/minus.svg" class="plusminus-hand">
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square">
+                                <div class="square-content d-flex vogu_white value-ref align-items-center justify-content-center" id="YELLOW_hand">
+                                    0
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex vogu_yellow" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_yellow align-items-center justify-content-center ">
+                                    <button class="borderless p-0 h-100 w-100" onclick="increase2('YELLOW_hand');">
+                                        <img src="./img/plus.svg" class="plusminus-hand">
+                                    </button>
+                                </div>                            
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- 緑 -->
+                <div class="row g-3 mb-3 justify-content-between mx-0">
+                    <!-- 左部分 -->
+                    <div class="d-flex vogu_green align-items-center p-0" style="width: 51%;">
+                        <!-- 色のイニシャル -->
+                        <div class="d-flex" style="width: 30.41%;">
+                            <div class="square">
+                                <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
+                                    R
+                                </div>
+                            </div>
+                        </div>
+                        <!-- チェックボックス -->
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; height: 100%;">
+                            <!-- 1個目 -->
+                            <div class="d-flex align-items-center justify-content-center p-0 check-btns me-2">
+                                <input type="checkbox" value="1" name="check" id="GREEN_token1">
+                                <label for="GREEN_token1"></label>
+                            </div>
+                            <!-- 2個目 -->
+                            <div class="check-btns d-flex align-items-center justify-content-center p-0 ms-2">
+                                <input type="checkbox" value="2" name="check" id="GREEN_token2">
+                                <label for="GREEN_token2"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右部分 -->
+                    <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%;">
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_green align-items-center justify-content-center " >
+                                    <button class="borderless p-0 h-100 w-100" onclick="decrease2('GREEN_hand');">
+                                        <img src="./img/minus.svg" class="plusminus-hand">
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square">
+                                <div class="square-content d-flex vogu_white value-ref align-items-center justify-content-center" id="GREEN_hand">
+                                    0
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex vogu_green" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_green align-items-center justify-content-center ">
+                                    <button class="borderless p-0 h-100 w-100" onclick="increase2('GREEN_hand');">
+                                        <img src="./img/plus.svg" class="plusminus-hand">
+                                    </button>
+                                </div>                            
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- 白 -->
+                <div class="row g-3 mb-3 justify-content-between mx-0">
+                    <!-- 左部分 -->
+                    <div class="d-flex vogu_white align-items-center p-0" style="width: 51%;">
+                        <!-- 色のイニシャル -->
+                        <div class="d-flex" style="width: 30.41%;">
+                            <div class="square">
+                                <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
+                                    R
+                                </div>
+                            </div>
+                        </div>
+                        <!-- チェックボックス -->
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; height: 100%;">
+                            <!-- 1個目 -->
+                            <div class="d-flex align-items-center justify-content-center p-0 check-btns me-2">
+                                <input type="checkbox" value="1" name="check" id="WHITE_token1">
+                                <label for="WHITE_token1" style="border: 0.05rem solid #3B393B;"></label>
+                            </div>
+                            <!-- 2個目 -->
+                            <div class="check-btns d-flex align-items-center justify-content-center p-0 ms-2">
+                                <input type="checkbox" value="2" name="check" id="WHITE_token2">
+                                <label for="WHITE_token2" style="border: 0.05rem solid #3B393B;"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右部分 -->
+                    <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%;">
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_white align-items-center justify-content-center " >
+                                    <button class="borderless p-0 h-100 w-100" onclick="decrease2('WHITE_hand');">
+                                        <img src="./img/minus_bk.svg" class="plusminus-hand">
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square">
+                                <div class="square-content d-flex vogu_white value-ref align-items-center justify-content-center" id="WHITE_hand" style="border: 0.05rem solid #3B393B; border-bottom: 0px; border-top: 0px;">
+                                    0
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex vogu_white" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_white align-items-center justify-content-center ">
+                                    <button class="borderless p-0 h-100 w-100" onclick="increase2('WHITE_hand');">
+                                        <img src="./img/plus_bk.svg" class="plusminus-hand">
+                                    </button>
+                                </div>                            
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- 黒 -->
+                <div class="row g-3 mb-3 justify-content-between mx-0">
+                    <!-- 左部分 -->
+                    <div class="d-flex vogu_black align-items-center p-0" style="width: 51%; border: 0.05rem solid white;">
+                        <!-- 色のイニシャル -->
+                        <div class="d-flex" style="width: 30.41%;">
+                            <div class="square">
+                                <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
+                                    R
+                                </div>
+                            </div>
+                        </div>
+                        <!-- チェックボックス -->
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; height: 100%;">
+                            <!-- 1個目 -->
+                            <div class="d-flex align-items-center justify-content-center p-0 check-btns me-2">
+                                <input type="checkbox" value="1" name="check" id="BLACK_token1">
+                                <label for="BLACK_token1"></label>
+                            </div>
+                            <!-- 2個目 -->
+                            <div class="check-btns d-flex align-items-center justify-content-center p-0 ms-2">
+                                <input type="checkbox" value="2" name="check" id="BLACK_token2">
+                                <label for="BLACK_token2"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右部分 -->
+                    <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%; border: 0.05rem solid white;">
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_black align-items-center justify-content-center " >
+                                    <button class="borderless p-0 h-100 w-100" onclick="decrease2('BLACK_hand');">
+                                        <img src="./img/minus.svg" class="plusminus-hand">
+                                    </button>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex" style="width: 33%;">
+                            <div class="square">
+                                <div class="square-content d-flex vogu_white value-ref align-items-center justify-content-center" id="BLACK_hand">
+                                    0
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="d-flex vogu_black" style="width: 33%;">
+                            <div class="square p-auto">
+                                <div class="square-content d-flex vogu_black align-items-center justify-content-center ">
+                                    <button class="borderless p-0 h-100 w-100" onclick="increase2('BLACK_hand');">
+                                        <img src="./img/plus.svg" class="plusminus-hand">
+                                    </button>
+                                </div>                            
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- プレイヤーの追加 -->
                 <div class="player-num">
-                    <img src="img/add_player.svg" style="height: 3em;">
+                    <img src="img/add_player.svg" style="height: 3rem;">
                 </div>
 
                 <!--====== 計算実行 ======-->
