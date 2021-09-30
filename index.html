@@ -54,20 +54,29 @@
             </div>
         </div>
 
-        <!-- モーダル-リセット-->
+        <!-- モーダル リセット-->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-              <div class="modal-header">
-                <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="modal-header borderless vogu_red">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">
-                リセットします？
+              <div class="modal-body text-center borderless">
+                <div class=" h2">
+                    リセットしますか？
+                </div>
+                <div class="mt-3 mb-1">
+                    "色の価値" と "得点計算" の内容が消えます。
+                </div>
+
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Understood</button>
+              <div class="modal-footer d-flex justify-content-evenly borderless mb-3">
+                <button type="button" class="modal-btn h1" onclick="window.location.reload(false);">
+                    はい
+                </button>
+                <button type="button" class="modal-btn h1"  data-bs-dismiss="modal">
+                    いいえ
+                </button>
               </div>
             </div>
           </div>
@@ -75,16 +84,16 @@
 
         <!--====== タブ切り替え ======-->
         <ul class="nav nav-pills row g-3 mb-5 justify-content-center" id="pills-tab" role="tablist">
-                        <li class="nav-item d-grid col-6 col-sm-4" role="presentation">
-                            <button class="nav-link tab-btn p-1" id="pills-color-tab" data-bs-toggle="pill" data-bs-target="#pills-color" type="button" role="tab" aria-controls="pills-color" aria-selected="true">
-                                色の価値
-                            </button>
-                        </li>
-                        <li class="nav-item d-grid col-6 col-sm-4" role="presentation">
-                            <button class="nav-link active tab-btn p-1" id="pills-calc-tab" data-bs-toggle="pill" data-bs-target="#pills-calc" type="button" role="tab" aria-controls="pills-calc" aria-selected="false">
-                                得点計算
-                            </button>
-                        </li>
+            <li class="nav-item d-grid col-6 col-sm-4" role="presentation">
+                <button class="nav-link tab-btn p-1" id="pills-color-tab" data-bs-toggle="pill" data-bs-target="#pills-color" type="button" role="tab" aria-controls="pills-color" aria-selected="true">
+                    色の価値
+                </button>
+            </li>
+            <li class="nav-item d-grid col-6 col-sm-4" role="presentation">
+                <button class="nav-link active tab-btn p-1" id="pills-calc-tab" data-bs-toggle="pill" data-bs-target="#pills-calc" type="button" role="tab" aria-controls="pills-calc" aria-selected="false">
+                    得点計算
+                </button>
+            </li>
         </ul>
         <!--====== 色の価値トラッカー ======-->
         <div class="tab-content" id="pills-tabContent">
@@ -307,7 +316,7 @@
                     <div class="d-flex align-items-center justify-content-center p-0" style="width: 51%;">
                         <div class="d-flex vogu_green" style="width: 30.41%;">
                         </div>
-                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; letter-spacing: 0.2rem;vertical-align: middle;">
+                        <div class="d-flex align-items-center justify-content-center" style="width: 69.59%; letter-spacing: 0.1rem;vertical-align: middle;">
                             <img src="img/shoe.svg" style="height: 1em; margin-right: 0.5em;"> トークン
                         </div>
                     </div>                    
@@ -436,7 +445,7 @@
                         <div class="d-flex" style="width: 30.41%;">
                             <div class="square">
                                 <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
-                                    R
+                                    Y
                                 </div>
                             </div>
                         </div>
@@ -492,7 +501,7 @@
                         <div class="d-flex" style="width: 30.41%;">
                             <div class="square">
                                 <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
-                                    R
+                                    G
                                 </div>
                             </div>
                         </div>
@@ -548,7 +557,7 @@
                         <div class="d-flex" style="width: 30.41%;">
                             <div class="square">
                                 <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
-                                    R
+                                    W
                                 </div>
                             </div>
                         </div>
@@ -599,12 +608,12 @@
                 <!-- 黒 -->
                 <div class="row g-3 mb-3 justify-content-between mx-0">
                     <!-- 左部分 -->
-                    <div class="d-flex vogu_black align-items-center p-0" style="width: 51%; border: 0.05rem solid white;">
+                    <div class="d-flex vogu_black align-items-center p-0" style="width: 51%; border: 0.05rem solid white">
                         <!-- 色のイニシャル -->
                         <div class="d-flex" style="width: 30.41%;">
                             <div class="square">
                                 <div class="square-content d-flex align-items-center justify-content-center p-3" style="font-size: 2.5rem;font-family: 'Poppins', sans-serif; ">
-                                    R
+                                    K
                                 </div>
                             </div>
                         </div>
@@ -623,10 +632,10 @@
                         </div>
                     </div>
                     <!-- 右部分 -->
-                    <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%; border: 0.05rem solid white;">
+                    <div class="d-flex align-items-center justify-content-end p-0" style="width: 47%;">
                         <div class="d-flex" style="width: 33%;">
                             <div class="square p-auto">
-                                <div class="square-content d-flex vogu_black align-items-center justify-content-center " >
+                                <div class="square-content d-flex vogu_black align-items-center justify-content-center" style="border: 0.05rem solid white; border-right: 0px;">
                                     <button class="borderless p-0 h-100 w-100" onclick="decrease2('BLACK_hand');">
                                         <img src="./img/minus.svg" class="plusminus-hand">
                                     </button>
@@ -640,9 +649,9 @@
                                 </div>
                             </div>
                         </div> 
-                        <div class="d-flex vogu_black" style="width: 33%;">
+                        <div class="d-flex vogu_green" style="width: 33%;">
                             <div class="square p-auto">
-                                <div class="square-content d-flex vogu_black align-items-center justify-content-center ">
+                                <div class="square-content d-flex vogu_black align-items-center justify-content-center" style="border: 0.05rem solid white; border-left: 0px;">
                                     <button class="borderless p-0 h-100 w-100" onclick="increase2('BLACK_hand');">
                                         <img src="./img/plus.svg" class="plusminus-hand">
                                     </button>

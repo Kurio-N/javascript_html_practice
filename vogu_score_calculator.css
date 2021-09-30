@@ -100,7 +100,30 @@ body {
     background-color: var(--color-vogu-black)!important;
     color: var(--color-vogu-white)!important;
     border-radius: 0px;
+    font-family: 'Noto Sans JP', sans-serif;
 }
+
+.modal-btn{
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--color-vogu-black);
+    border: 0.05rem solid white;
+    color: white;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: auto;
+    padding-right: auto;
+    width: 30%;
+}
+    
+.modal-btn:active{
+    background-color: white!important;
+    color: var(--color-vogu-black)!important;
+}
+
+.modal-btn:focus{
+    background-color: white;
+    color: var(--color-vogu-black);
+}    
 
 
 /***** タブボタン *****/
