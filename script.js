@@ -1,26 +1,38 @@
 
-var result = document.getElementById("result");
+
+// ==== 定数 ====
 const TOKEN_RATIO = 1.5;
 const TOKEN_RATIO2 = 2.0;
 const colors = ['RED', 'BLUE', 'GREEN', 'YELLOW', 'WHITE', 'BLACK'];
 
+// ==== グローバル変数 ====
+var result = document.getElementById("result");
+var player_num = 1;
+
+// 値を上昇
 function increase(id) {
-    var trg = document.getElementById(id);
-    // trg.value = new Function("return 1+" + trg.value)();
-    trg.value = parseInt(trg.value) + 1;
+    const trg = document.getElementById(id);
+    var val = parseInt(trg.innerHTML);
+    
+    if(val >= 10){
+        trg.innerHTML = val;
+    }
+    else{
+        trg.innerHTML = val + 1;
+    }
+
 }
+// 値を減少
 function decrease(id) {
-    var trg = document.getElementById(id);
-    trg.value = new Function("return " + trg.value + "-1")();
-}
-function increase2(id) {
-    var trg = document.getElementById(id);
-    // trg.value = new Function("return 1+" + trg.value)();
-    trg.innerHTML = parseInt(trg.innerHTML) + 1;
-}
-function decrease2(id) {
-    var trg = document.getElementById(id);
-    trg.innerHTML = parseInt(trg.innerHTML) - 1;
+    const trg = document.getElementById(id);
+    var val = parseInt(trg.innerHTML)
+
+    if(val <= -10){
+        trg.innerHTML = val;
+    }
+    else{
+        trg.innerHTML = val - 1;
+    }
 }
 
 // 得点計算画面に反映させる
@@ -31,7 +43,30 @@ function apply(id1, id2){
     trg2.innerHTML = trg1.innerHTML;
 }
 
+// ===== jQueryに依存した関数 =====
+function add_player(){
 
+    // プレイヤーごとのをコピー
+    var tmp = $("#player1").clone()
+   
+    // プレイヤー人数を増加
+    player_num += 1;
+
+    // 表示名変更
+    tmp.find(".player-num").text("プレイヤー" + String(player_num))
+
+    // IDを変更
+    txt = tmp.html()
+    tmp.html(txt.replace(/player1/g, 'player'+String(player_num)))
+
+    // 表示
+    tmp.appendTo("#extra-players").hide().slideDown();
+    
+}
+
+function sub_player(){
+    
+}
 
 function calc_score() {
 
@@ -42,14 +77,14 @@ function calc_score() {
     for (const color of colors) {
 
         val = Number(parseInt(document.getElementById(color).innerHTML));
-        num = Number(document.getElementById(color + "_hand").value)
+        num = Number(parseInt(document.getElementById(color + "_hand_player1").innerHTML));
 
-        if(document.getElementById(color + "_token1").checked && document.getElementById(color + "_token2").checked){
+        if(document.getElementById(color + "_token1_player1").checked && document.getElementById(color + "_token2_plaery1").checked){
 
             tmp += parseInt(val * num * TOKEN_RATIO2, 10)
 
         }
-        else if(document.getElementById(color + "_token1").checked || document.getElementById(color + "_token2").checked){
+        else if(document.getElementById(color + "_token1_player1").checked || document.getElementById(color + "_token2_player1").checked){
             tmp += parseInt(val * num * TOKEN_RATIO, 10)
         }
         else{
