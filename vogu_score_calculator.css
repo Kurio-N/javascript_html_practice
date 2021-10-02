@@ -63,16 +63,6 @@ body {
     margin: auto;
   }
 
-/* .container {
-    padding: 30px 0;
-    background-color: rgb(241, 239, 239);
-} */
-
-
-/* .row {
-    margin-bottom: 10px;
-} */
-
 .borderless{
     border: 0;
     background-color: transparent;
@@ -113,6 +103,7 @@ body {
     padding-left: auto;
     padding-right: auto;
     width: 30%;
+    white-space: nowrap;
 }
     
 .modal-btn:active{
@@ -231,8 +222,8 @@ body {
     letter-spacing: 0.1em;
     margin: auto;
     white-space: nowrap;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   .player-num:before {
     border-top: 1px solid var(--color-vogu-white);
@@ -334,4 +325,17 @@ opacity: 1;
     border-radius: 0pt;
     border: 0.05rem solid white;
     letter-spacing: 0.2em;
+}
+
+.result{
+    font-size: 1.3rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.1em;
+    vertical-align: middle;
+    margin-top: 3rem;
+}
+
+.result-player{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

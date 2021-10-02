@@ -36,10 +36,16 @@
     <meta name="msapplication-TileColor" content="#45449b">
     <meta name="msapplication-config" content="./icons/browserconfig.xml">
     <meta name="theme-color" content="#3B393B">
+    
     </head>
   <body>
     <!-- <header style="background-color:gray">Header</header> -->
-  
+    <svg xmlns="http://www.w3.org/2000/svg" display="none">
+        <symbol viewBox="0 0 88.48 46.72" id="shoe-icon">
+            <path d="M73,45.72H4.42l-.2-.06c-4.76-1-1.56-12-1.56-12S.23,29.52,1.25,22C1.75,18.23,4.14,9.54,7.6,6.7,9,5.52,9.72,5.54,12.16,6.64c1.57.71,7.93,1.57,16.36-1.08,0,0-.21-.94,1.82-2.74.63-.56,1.36-1.18,1.9-1.62a.87.87,0,0,1,1.28.18c1.25,1.88,4.36,6.5,4.83,7.29s7,5.16,12.76,8.69C57.21,21.1,63.81,25,63.81,25s11.72,1.95,13.1,2C89.29,27.72,94,42.23,73,45.72Z"/>
+        </symbol>
+    </svg>
+
     <main class="container calc_main">
 
         <!--====== ゲームタイトルロゴ・リセットボタン ======-->
@@ -320,7 +326,7 @@
                     </div>
 
                     <!-- 説明 -->
-                    <div class="row g-3 mb-3 justify-content-between mx-0 vogu_black">
+                    <div class="row g-3 mb-3 mx-0 justify-content-between vogu_black">
                         <div class="d-flex align-items-center justify-content-center p-0" style="width: 51%;">
                             <div class="d-flex vogu_green" style="width: 30.41%;">
                             </div>
@@ -688,9 +694,52 @@
                     </button>
                 </div>
 
-                <div class="row justify-content-center">
-                    <div class="col-6">
-                        <input id="result" type="text" value="0">
+                <div class="result">
+                    <div class="d-flex justify-content-between  result-player">
+                        <div class="vogu_black d-flex align-items-center" >
+                            プレイヤー1 
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                                <use xlink:href="#shoe-icon"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                                <use xlink:href="#shoe-icon"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                                <use xlink:href="#shoe-icon"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                                <use xlink:href="#shoe-icon"></use>
+                            </svg>
+    
+                        </div>
+                        <div class="vogu_black">
+                            100点
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between  result-player">
+                        <div class="vogu_black d-flex align-items-center" >
+                            プレイヤー2
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                                <use xlink:href="#shoe-icon"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                                <use xlink:href="#shoe-icon"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                                <use xlink:href="#shoe-icon"></use>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                                <use xlink:href="#shoe-icon"></use>
+                            </svg>
+    
+                        </div>
+                        <div class="vogu_black">
+                            100点
+                        </div>
                     </div>
                 </div>
 
