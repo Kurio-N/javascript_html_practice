@@ -1,8 +1,11 @@
 
 
 // ==== 定数 ====
-const TOKEN_RATIO = 1.5;
+const TOKEN_RATIO  = 1.5;
 const TOKEN_RATIO2 = 2.0;
+const MAX_PLAYER   = 5;
+const MAX_VALUE    = 10;
+const MIN_VALUE    = -10;
 const colors = ['RED', 'BLUE', 'GREEN', 'YELLOW', 'WHITE', 'BLACK'];
 
 // ==== グローバル変数 ====
@@ -14,7 +17,7 @@ function increase(id) {
     const trg = document.getElementById(id);
     var val = parseInt(trg.innerHTML);
     
-    if(val >= 10){
+    if(val >= MAX_VALUE){
         trg.innerHTML = val;
     }
     else{
@@ -27,7 +30,7 @@ function decrease(id) {
     const trg = document.getElementById(id);
     var val = parseInt(trg.innerHTML)
 
-    if(val <= -10){
+    if(val <= MIN_VALUE){
         trg.innerHTML = val;
     }
     else{
@@ -46,26 +49,33 @@ function apply(id1, id2){
 // ===== jQueryに依存した関数 =====
 function add_player(){
 
-    // プレイヤーごとのをコピー
-    var tmp = $("#player1").clone()
-   
     // プレイヤー人数を増加
     player_num += 1;
 
+    // プレイヤーごとのをコピー
+    var tmp = $("#player1").clone();
+
     // 表示名変更
-    tmp.find(".player-num").text("プレイヤー" + String(player_num))
+    tmp.find(".player-num").text("プレイヤー" + String(player_num));
 
     // IDを変更
-    txt = tmp.html()
-    tmp.html(txt.replace(/player1/g, 'player'+String(player_num)))
+    tmp.attr('id', 'player' + String(player_num));
+    txt = tmp.html();
+    tmp.html(txt.replace(/player1/g, 'player'+String(player_num)));
 
     // 表示
     tmp.appendTo("#extra-players").hide().slideDown();
-    
+
+    if(player_num == MAX_PLAYER){
+       document.getElementById("player-add-btn").disabled = true;
+    }
+
 }
 
 function sub_player(){
-    
+    $("#player2").slideUp();
+    $("#player2").remove();
+    player_num -= 1;
 }
 
 function calc_score() {
@@ -77,18 +87,18 @@ function calc_score() {
     for (const color of colors) {
 
         val = Number(parseInt(document.getElementById(color).innerHTML));
-        num = Number(parseInt(document.getElementById(color + "_hand_player1").innerHTML));
+        num = Number(parseInt(document.getElementById(color + "_hand_player2").innerHTML));
 
-        if(document.getElementById(color + "_token1_player1").checked && document.getElementById(color + "_token2_plaery1").checked){
+        if(document.getElementById(color + "_token1_player2").checked && document.getElementById(color + "_token2_plaery2").checked){
 
-            tmp += parseInt(val * num * TOKEN_RATIO2, 10)
+            tmp += parseInt(val * num * TOKEN_RATIO2, 10);
 
         }
-        else if(document.getElementById(color + "_token1_player1").checked || document.getElementById(color + "_token2_player1").checked){
-            tmp += parseInt(val * num * TOKEN_RATIO, 10)
+        else if(document.getElementById(color + "_token1_player1").checked || document.getElementById(color + "_token2_player2").checked){
+            tmp += parseInt(val * num * TOKEN_RATIO, 10);
         }
         else{
-            tmp += val * num
+            tmp += val * num;
         }
 
         result.value = tmp;

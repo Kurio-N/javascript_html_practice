@@ -6,7 +6,7 @@
     --color-vogu-green: #6EC6A6;
     --color-vogu-black: #3B393B;
     --color-vogu-white: white;  
-    --color-vogu-lblack: #58595B;
+    --color-vogu-lblack: #4F4F4F;
 }
 
 /***** 諸々の設定 *****/
@@ -108,8 +108,8 @@ body {
     background-color: var(--color-vogu-black);
     border: 0.05rem solid white;
     color: white;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
     padding-left: auto;
     padding-right: auto;
     width: 30%;
@@ -228,6 +228,7 @@ body {
     color: var(--color-vogu-white);
     font-size: 1.3rem;
     font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.1em;
     margin: auto;
     white-space: nowrap;
     margin-top: 1.5rem;
@@ -310,6 +311,15 @@ body {
 opacity: 1;
 }
 
+/* プレイヤー追加ボタン */
+.player-add-btn-img{
+    height: 3rem;
+}
+
+.player-add-btn:disabled{
+    pointer-events: none;
+    filter: invert(18%) sepia(0%) saturate(2495%) hue-rotate(323deg) brightness(87%) contrast(90%);
+}
 
 /* 計算ボタン */
 .btn-calc{
