@@ -311,6 +311,12 @@ body {
 opacity: 1;
 }
 
+/* プレイヤー削除ボタン */
+.player-sub-btn:disabled{
+    pointer-events: none;
+    filter: invert(18%) sepia(0%) saturate(2495%) hue-rotate(323deg) brightness(87%) contrast(90%);    
+}
+
 /* プレイヤー追加ボタン */
 .player-add-btn-img{
     height: 3rem;
