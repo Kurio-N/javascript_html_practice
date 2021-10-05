@@ -112,8 +112,9 @@ function sub_player(player_id){
         id_num = parseInt(player_id.replace("player", ""))
 
         // そのプレイヤーより後ろのプレイヤーを１つずつ下にスライド
+        // ToDo この処理が完了してからenable disableの処理を実行する
         for (let i = id_num; i < player_num; i++){
-            change_player_id(i+1, i)
+            change_player_id(i+1, i);
         }
 
         // プレイヤー数を減少
