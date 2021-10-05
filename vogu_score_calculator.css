@@ -217,7 +217,7 @@ body {
     align-items: center; /* 垂直中心 */
     justify-content: center; /* 水平中心 */
     color: var(--color-vogu-white);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-family: 'Noto Sans JP', sans-serif;
     letter-spacing: 0.1em;
     margin: auto;
@@ -352,7 +352,6 @@ opacity: 1;
 }
 
 .result{
-    font-size: 1.2rem;
     font-family: 'Noto Sans JP', sans-serif;
     letter-spacing: 0.1em;
     vertical-align: middle;
@@ -360,6 +359,7 @@ opacity: 1;
 }
 
 .result-player{
+    font-size: 1.2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }

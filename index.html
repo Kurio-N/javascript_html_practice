@@ -45,6 +45,13 @@
             <path d="M73,45.72H4.42l-.2-.06c-4.76-1-1.56-12-1.56-12S.23,29.52,1.25,22C1.75,18.23,4.14,9.54,7.6,6.7,9,5.52,9.72,5.54,12.16,6.64c1.57.71,7.93,1.57,16.36-1.08,0,0-.21-.94,1.82-2.74.63-.56,1.36-1.18,1.9-1.62a.87.87,0,0,1,1.28.18c1.25,1.88,4.36,6.5,4.83,7.29s7,5.16,12.76,8.69C57.21,21.1,63.81,25,63.81,25s11.72,1.95,13.1,2C89.29,27.72,94,42.23,73,45.72Z"/>
         </symbol>
     </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" display="none" class="bi bi-exclamation-triangle">
+        <symbol viewBox="0 0 16 16" id="alert">
+            <path fill="#EE396C" d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+            <path fill="#EE396C" d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>    
+        </symbol>
+    </svg>
+</div>
 
     <main class="container calc_main">
 
@@ -694,24 +701,29 @@
                 </div>
 
                 <div class="result">
-                    <div class="d-flex justify-content-between result-player" id="result_player1" style="margin-bottom: 0;">
-                        <div class="vogu_black d-flex justify-content-center" >
-                            プレイヤー1 <svg class="bi bi-alert-triangle text-success" width="32" height="32" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              </svg>
+                    <div class="d-flex justify-content-start result-player" id="result_player1" style="margin-bottom: 0;">
+                        <div class="vogu_black algin-middle" >
+                            <p>プレイヤー1 
+                                <button type="button" class="borderless" data-toggle="tooltip" data-placement="top" title="トークンが多すぎます" disabled>
+                                    <svg title="Tooltip on top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="bi bi-exclamation-triangle" style="height: 1em; padding-bottom:0.05em">
+                                        <use xlink:href="#alert"></use>
+                                    </svg>        
+                                </button>
+                            </p>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between result-player" id="result_player1" style="margin-top: 0; margin-left: 0.2em;">
                         <div >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
                                 <use xlink:href="#shoe-icon"></use>
                             </svg>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#EE396C; stroke:#EE396C; stroke-miterlimit:10; stroke-width:2px; height:1em;">
                                 <use xlink:href="#shoe-icon"></use>
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:#3b3b3c; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:#3B393B; stroke-miterlimit:10; stroke-width:2px; height:1em;">
                                 <use xlink:href="#shoe-icon"></use>
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:#3b3b3c; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:#3B393B; stroke-miterlimit:10; stroke-width:2px; height:1em;">
                                 <use xlink:href="#shoe-icon"></use>
                             </svg>
     
@@ -733,10 +745,10 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#6EC6A6; stroke:#6EC6A6; stroke-miterlimit:10; stroke-width:2px; height:1em;">
                                 <use xlink:href="#shoe-icon"></use>
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:#3b3b3c; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:#3B393B; stroke-miterlimit:10; stroke-width:2px; height:1em;">
                                 <use xlink:href="#shoe-icon"></use>
                             </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3b3b3c; stroke:#3b3b3c; stroke-miterlimit:10; stroke-width:2px; height:1em;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:#3B393B; stroke-miterlimit:10; stroke-width:2px; height:1em;">
                                 <use xlink:href="#shoe-icon"></use>
                             </svg>
     
