@@ -363,3 +363,41 @@ opacity: 1;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+/* 結果表示部分のトークンの塗り方 */
+
+.shoes{
+    stroke-miterlimit:10; 
+    stroke-width:2px; 
+    height:1em;
+}
+
+.shoes-BLUE{
+    fill: var(--color--vogu-blue);
+    stroke: var(--color-vogu-blue);
+}
+.shoes-RED{
+    fill:var(--color--vogu-red); 
+    stroke:var(--color--vogu-red); 
+}
+.shoes-YELLOW{
+    fill: var(--color--vogu-yellow);
+    stroke: var(--color--vogu-yellow);
+}
+.shoes-GREEN{
+    fill: var(--color-vogu-green);
+    stroke: var(--color-vogu-green);
+}
+.shoes-BLACK{
+    fill: var(--color-vogu-black);
+    stroke: var(--color-vogu-white);
+}
+.shoes-WHITE{
+    fill: var(--color-vogu-white);
+    stroke: var(--color-vogu-white);
+}
+
+.shoes-NONE{
+    fill: transparent;
+    stroke:transparent;
+}

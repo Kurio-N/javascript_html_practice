@@ -700,66 +700,34 @@
                     </button>
                 </div>
 
-                <div class="result">
-                    <div class="d-flex justify-content-start result-player" id="result_player1" style="margin-bottom: 0;">
-                        <div class="vogu_black algin-middle" >
-                            <p>プレイヤー1 
-                                <button type="button" class="borderless" data-toggle="tooltip" data-placement="top" title="トークンが多すぎます" disabled>
-                                    <svg title="Tooltip on top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="bi bi-exclamation-triangle" style="height: 1em; padding-bottom:0.05em">
-                                        <use xlink:href="#alert"></use>
-                                    </svg>        
-                                </button>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between result-player" id="result_player1" style="margin-top: 0; margin-left: 0.2em;">
-                        <div >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:white; stroke-miterlimit:10; stroke-width:2px; height:1em;">
-                                <use xlink:href="#shoe-icon"></use>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#EE396C; stroke:#EE396C; stroke-miterlimit:10; stroke-width:2px; height:1em;">
-                                <use xlink:href="#shoe-icon"></use>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:#3B393B; stroke-miterlimit:10; stroke-width:2px; height:1em;">
-                                <use xlink:href="#shoe-icon"></use>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:#3B393B; stroke-miterlimit:10; stroke-width:2px; height:1em;">
-                                <use xlink:href="#shoe-icon"></use>
-                            </svg>
-    
-                        </div>
-                        <div class="d-flex vogu_black justify-content-end">
-                            <div style="letter-spacing: 0;">・・・ </div>
-                            <div class="text-end" style="width: 3.5em;">
-                                <b>64点</b>
+                <div class="result" id="result" style="border:0;">
+                    <div id="result_player1" class="result-player">
+                        <div class="d-flex justify-content-start" style="margin-bottom: 0;">
+                            <div class="vogu_black algin-middle" id="name_player1">
+                                プレイヤー1
                             </div>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-between result-player" id="result_player1" style="margin-bottom: 0;">
-                        <div class="vogu_black d-flex justify-content-center" >
-                            プレイヤー2 
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between result-player" id="result_player1" style="margin-top: 0; margin-left: 0.2em;">
-                        <div >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#6EC6A6; stroke:#6EC6A6; stroke-miterlimit:10; stroke-width:2px; height:1em;">
-                                <use xlink:href="#shoe-icon"></use>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#6EC6A6; stroke:#6EC6A6; stroke-miterlimit:10; stroke-width:2px; height:1em;">
-                                <use xlink:href="#shoe-icon"></use>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:#3B393B; stroke-miterlimit:10; stroke-width:2px; height:1em;">
-                                <use xlink:href="#shoe-icon"></use>
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" style="fill:#3B393B; stroke:#3B393B; stroke-miterlimit:10; stroke-width:2px; height:1em;">
-                                <use xlink:href="#shoe-icon"></use>
-                            </svg>
-    
-                        </div>
-                        <div class="d-flex vogu_black justify-content-end">
-                            <div style="letter-spacing: 0;">・・・ </div>
-                            <div class="text-end" style="width: 3.5em;">
-                                <b>100点</b>
+                        <div class="d-flex justify-content-between result-player" style="margin-top: 0; margin-left: 0.2em;">
+                            <div >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" class="shoes shoes-NONE" id="token1_player1">
+                                    <use xlink:href="#shoe-icon"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" class="shoes shoes-NONE" id="token2_player1">
+                                    <use xlink:href="#shoe-icon"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" class="shoes shoes-NONE" id="token3_player1">
+                                    <use xlink:href="#shoe-icon"></use>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.48 46.72" class="shoes shoes-NONE" id="token4_player1">
+                                    <use xlink:href="#shoe-icon"></use>
+                                </svg>
+        
+                            </div>
+                            <div class="d-flex vogu_black justify-content-end">
+                                <div style="letter-spacing: 0;">・・・ </div>
+                                <div class="text-end fw-bold" style="width: 3.5em;" id="score_player1">
+                                    0点
+                                </div>
                             </div>
                         </div>
                     </div>

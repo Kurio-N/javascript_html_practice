@@ -9,7 +9,6 @@ const MIN_VALUE    = -10;
 const colors = ['RED', 'BLUE', 'GREEN', 'YELLOW', 'WHITE', 'BLACK'];
 
 // ==== グローバル変数 ====
-var result = document.getElementById("result");
 var player_num = 1;
 
 // 値を上昇
@@ -46,6 +45,13 @@ function apply(id1, id2){
     trg2.innerHTML = trg1.innerHTML;
 }
 
+// 結果のトークンの色を変える
+function set_token_color(i, p, color){
+
+    $("#token" + String(i) + "_player" + String(p)).removeClass().addClass("shoes shoes-"+color);
+
+}
+
 // ===== jQueryに依存した関数 =====
 function add_player(){
 
@@ -77,6 +83,18 @@ function add_player(){
 
         // 表示
         tmp.appendTo("#extra-players").hide().slideDown();
+
+        // 結果部分にもプレイヤーを追加
+        var tmp_res = $("#result_player1").clone();
+
+        // 表示名・ID変更
+        txt_res = tmp_res.html();
+        tmp_res.attr('id', 'result_player' + String(player_num));
+        tmp_res.html(txt_res.replace(/player1/g, 'player'+String(player_num)));
+        tmp_res.find("#name_player"+String(player_num)).text( "プレイヤー" + String(player_num))
+
+        tmp_res.appendTo("#result")
+
     }
 
 }
@@ -138,26 +156,51 @@ function calc_score() {
     var val = 0;
     var num = 0;
     var tmp = 0;
+    var token_ind = 1;
+    var player = "";
 
-    for (const color of colors) {
+    for (let p = 1; p <= player_num; p++){
 
-        val = Number(parseInt(document.getElementById(color).innerHTML));
-        num = Number(parseInt(document.getElementById(color + "_hand_player2").innerHTML));
-
-        if(document.getElementById(color + "_token1_player2").checked && document.getElementById(color + "_token2_plaery2").checked){
-
-            tmp += parseInt(val * num * TOKEN_RATIO2, 10);
-
+        player = "player" + String(p);
+        tmp = 0;
+        for (let j = 1; j <= 4;j++){
+            set_token_color(j, p, "NONE");
         }
-        else if(document.getElementById(color + "_token1_player1").checked || document.getElementById(color + "_token2_player2").checked){
-            tmp += parseInt(val * num * TOKEN_RATIO, 10);
-        }
-        else{
-            tmp += val * num;
+        token_ind = 1;
+
+        for (const color of colors) {
+
+            val = Number(parseInt(document.getElementById(color).innerHTML));
+            console.log(val)
+            num = Number(parseInt(document.getElementById(color + "_hand_" + player).innerHTML))
+            console.log(num)
+            if(document.getElementById(color + "_token1_" + player).checked && document.getElementById(color + "_token2_" + player).checked){
+    
+                tmp += parseInt(val * num * TOKEN_RATIO2, 10);
+                
+                if (token_ind <= 4){
+                    set_token_color(token_ind++, p, color);
+                }
+                if (token_ind <= 4){
+                    set_token_color(token_ind++, p, color);
+                }
+    
+            }
+            else if(document.getElementById(color + "_token1_" + player).checked || document.getElementById(color + "_token2_" + player).checked){
+                console.log("OK")
+                tmp += parseInt(val * num * TOKEN_RATIO, 10);
+                if (token_ind <= 4){
+                    set_token_color(token_ind++, p, color);
+                }
+            }
+            else{
+                tmp += val * num;
+            }
+            
         }
 
-        result.value = tmp;
-        
+        document.getElementById("score_"+player).innerHTML = String(tmp) + "点";
     }
+
 
 }
