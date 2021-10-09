@@ -91,7 +91,7 @@ function add_player(){
         txt_res = tmp_res.html();
         tmp_res.attr('id', 'result_player' + String(player_num));
         tmp_res.html(txt_res.replace(/player1/g, 'player'+String(player_num)));
-        tmp_res.find("#name_player"+String(player_num)).text( "プレイヤー" + String(player_num))
+        tmp_res.find("#name_player"+String(player_num)).text( "プレイヤー" + String(player_num) + " ")
 
         tmp_res.appendTo("#result")
 
@@ -202,5 +202,7 @@ function calc_score() {
         document.getElementById("score_"+player).innerHTML = String(tmp) + "点";
     }
 
+    $("#result").show()
+    document.getElementById("btn-calc").disabled = true;
 
 }

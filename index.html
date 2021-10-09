@@ -51,6 +51,12 @@
             <path fill="#EE396C" d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>    
         </symbol>
     </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" display="none">
+        <symbol viewBox="0 0 72 72" id="delete">
+            <path d="M68 4v64H4V4h64m4-4H0v72h72V0Z" style="fill:#fff"/>
+            <path class="cls-2" d="m14.33 14.5 43.13 43.14M57.46 14.5 14.33 57.64" style="fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:4px"/>    
+        </symbol>
+    </svg>
 </div>
 
     <main class="container calc_main">
@@ -326,8 +332,10 @@
                     </div>
 
                     <div class="d-flex justify-content-end m-0">
-                        <button  type="button" class="borderless py-1 px-1 d-flex player-sub-btn" disabled id="player1-sub-btn" onclick="sub_player('player1')">
-                            <img src="img/delete_player.svg" style="height: 1.5rem;">
+                        <button  type="button" class="borderless py-1 px-0 d-flex player-sub-btn" disabled id="player1-sub-btn" onclick="sub_player('player1')">
+                            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 72 72">
+                                <use xlink:href="#delete"></use>
+                            </svg>
                         </button>
                     </div>
 
@@ -695,16 +703,29 @@
 
                 <!--====== 計算実行 ======-->
                 <div class="row g-3 my-3">
-                    <button type="button" class="btn col-10 mx-auto py-3 btn-calc" onclick="calc_score()" style="font-size: 1.3em; font-family: 'Poppins', sans-serif;;">
+                    <button type="button" class="btn col-10 mx-auto py-3 btn-calc" onclick="calc_score()" style="font-size: 1.3em; font-family: 'Poppins', sans-serif;" id="btn-calc">
                         CALCULATE!
                     </button>
                 </div>
 
-                <div class="result" id="result" style="border:0;">
+                <!--===== 結果表示 =====-->
+                <div class="result" id="result" style="border:0; display: none;" >
+                    <!-- プレイヤー1 -->
                     <div id="result_player1" class="result-player">
-                        <div class="d-flex justify-content-start" style="margin-bottom: 0;">
-                            <div class="vogu_black algin-middle" id="name_player1">
-                                プレイヤー1
+                        <div class="d-flex justify-content-between">
+                            <div class="vogu_black d-flex">
+                                <span id="name_player1">プレイヤー1 </span>
+                                <button type="button" class="borderless py-0 px-0 d-flex alert" disabled id="alert_player1" data-toggle="tooltip" data-placement="top" title="トークンの数が多すぎます!" trigger="hover focus click">
+                                    <svg xmlns="http://www.w3.org/2000/svg" style="height:100%;" viewBox="0 0 16 16">
+                                        <use xlink:href="#alert"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="d-flex vogu_black justify-content-end">
+                                <div style="letter-spacing: 0;">・・・ </div>
+                                <div class="text-end fw-bold" style="width: 3.5em;" id="score_player1">
+                                    0点
+                                </div>
                             </div>
                         </div>
                         <div class="d-flex justify-content-between result-player" style="margin-top: 0; margin-left: 0.2em;">
@@ -723,12 +744,7 @@
                                 </svg>
         
                             </div>
-                            <div class="d-flex vogu_black justify-content-end">
-                                <div style="letter-spacing: 0;">・・・ </div>
-                                <div class="text-end fw-bold" style="width: 3.5em;" id="score_player1">
-                                    0点
-                                </div>
-                            </div>
+
                         </div>
                     </div>
 

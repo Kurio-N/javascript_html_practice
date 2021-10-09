@@ -299,13 +299,18 @@ body {
 }
 
 .check-btns input[type=checkbox]:checked + label::after {
-opacity: 1;
+    opacity: 1;
 }
 
 /* プレイヤー削除ボタン */
 .player-sub-btn:disabled{
     pointer-events: none;
     filter: invert(18%) sepia(0%) saturate(2495%) hue-rotate(323deg) brightness(87%) contrast(90%);    
+}
+
+.player-sub-btn svg{
+    height:1.5em;
+    margin:0;
 }
 
 /* プレイヤー追加ボタン */
@@ -347,10 +352,12 @@ opacity: 1;
     letter-spacing: 0.2em;
 }
 .btn-calc:disabled{
-    color: var(--color-vogu-lblack);
+    background-color: #3F3F3F;
+    color: #6f6f6f;
     pointer-events: none;
 }
 
+/* 結果表示 */
 .result{
     font-family: 'Noto Sans JP', sans-serif;
     letter-spacing: 0.1em;
@@ -364,9 +371,24 @@ opacity: 1;
     margin-bottom: 1rem;
 }
 
+/* アラート */
+.alert{
+    /* display:inline-block; */
+    height:1em;
+    margin:auto
+}
+.alert:disabled{
+    display: none;
+}
+.alert:disabled svg{
+    display: none;
+}
+
+
 /* 結果表示部分のトークンの塗り方 */
 
 .shoes{
+    margin-right:0.3rem;
     stroke-miterlimit:10; 
     stroke-width:2px; 
     height:1em;
