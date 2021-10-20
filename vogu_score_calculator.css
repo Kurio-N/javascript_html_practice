@@ -207,9 +207,9 @@ body {
 /* 色の価値を表示する */
 
 .value-ref{
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     font-family: 'Noto Sans', sans-serif;
-    letter-spacing: -0.1rem;
+    /* letter-spacing: -0.2rem; */
 }
 
 /* プレイヤーN 表示 */
