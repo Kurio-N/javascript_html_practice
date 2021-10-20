@@ -386,13 +386,11 @@ body {
     height:1em;
     margin:auto
 }
-.alert:disabled{
-    display: none;
-}
-.alert:disabled svg{
-    display: none;
-}
 
+.alert-svg{
+    pointer-events: none;
+    height:100%;
+}
 
 /* 結果表示部分のトークンの塗り方 */
 

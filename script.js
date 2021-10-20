@@ -1,19 +1,37 @@
+// ==== ToDos ====
+// * 手札のテンプレートを用意して、Player1ではなくテンプレートからコピーする
+// * エラーの検出機能を実装
+// * エラーマークの表示を微調整
+// * プレイヤー削除ボタンを押したらmodal表示
+// * スマホ用にフォントや隙間を調整
+// * 計算ボタンを押したら最下部に自動で移動
+// * 手札のHTMLもオブジェクトで管理する
+// * プレイヤーを追加したらそこに追従
+
+
 // ==== 定数 ====
-const TOKEN_RATIO   = 1.5;
-const TOKEN_RATIO2  = 2.0;
-const MAX_PLAYER    = 5;
-const MAX_VALUE     = 10;
-const MIN_VALUE     = -10;
-const MAX_COLOR_NUM = 16;
-const MIN_COLOR_NUM = 0;
-const MAX_TOKENS    = 4;
-const colors = ['RED', 'BLUE', 'GREEN', 'YELLOW', 'WHITE', 'BLACK'];
+const TOKEN_RATIO    = 1.5;
+const TOKEN_RATIO2   = 2.0;
+const MAX_PLAYER     = 5;
+const MAX_VALUE      = 10;
+const MIN_VALUE      = -10;
+const MAX_COLOR_NUM  = 16;
+const MIN_COLOR_NUM  = 0;
+const MAX_TOKENS     = 4;
+const FINAL_HANDS    = 4;
+const COLOR_PER_CARD = 2;
+const COLORS = ['RED', 'BLUE', 'GREEN', 'YELLOW', 'WHITE', 'BLACK'];
 
 // ==== クラス定義 ====
 // プレイヤーコンポーネント
 // ToDo 手札とトークンのHTML部分もこのクラスで管理する
 class Player{
+
     constructor(player_id) {
+
+        // 定数的な物
+        this.ALERT = ["トークンの数が多すぎます", "色の個数が多すぎます", "トークンの数が多すぎます<br>色の個数が多すぎます"]
+
         // 初期化
         this._player_id = player_id;
         this._prev_player_id = player_id;
@@ -21,7 +39,7 @@ class Player{
         this.tokens = {RED:[0, 0], BLUE:[0, 0], GREEN:[0, 0], YELLOW:[0, 0], WHITE:[0, 0], BLACK:[0, 0]}
         this.score  = 0;
 
-        // HTMLを作成
+        // HTMLのひな形を作成
         this.$result_html = jQuery("#result_playerX").clone(true);          
         var txt_res = this.$result_html.html();
         this.$result_html.attr('id', 'result_player' + String(player_id));
@@ -34,6 +52,15 @@ class Player{
     set player_id(id){
         this._prev_player_id = this._player_id;
         this._player_id = id;
+
+        // Player_IDをHTMLに反映しておく
+        if (this._prev_player_id != this._player_id){
+            this.$result_html.find(".player_name").text("プレイヤー" + String(this._player_id));
+            this.$result_html.attr('id', 'result_player' + String(this._player_id));
+            var txt_res = this.$result_html.html();
+            this.$result_html.html(txt_res.replace(new RegExp("player"+String(this._prev_player_id),'g'), 'player'+String(this._player_id)));
+        }
+
     }
     get player_id(){
         return this._player_id;
@@ -70,11 +97,35 @@ class Player{
         }
     }
 
+    get token_num(){
+
+        var sum = 0;
+
+        for (const color of COLORS){
+            console.log(color)
+            sum += this.tokens[color][0] + this.tokens[color][1];
+        }
+
+        return sum;
+    }
+
+    get color_num(){
+
+        var sum = 0;
+        for (const color of COLORS){
+
+            sum += this.colors[color]
+        }
+
+        return sum;
+
+    }
+
     calc_score(color_values) {
 
         var tmp = 0;
 
-        for (const color of colors) {
+        for (const color of COLORS) {
 
             var val = color_values[color];
             var num = this.colors[color]
@@ -97,19 +148,19 @@ class Player{
 
     update_html(){
 
-        // Player_IDを反映
-        if (this._prev_player_id != this._player_id){
-            this.$result_html.find(".player_name").text("プレイヤー" + String(this._player_id));
-            this.$result_html.attr('id', 'result_player' + String(this._player_id));
-            var txt_res = this.$result_html.html();
-            this.$result_html.html(txt_res.replace(new RegExp("player"+String(this._prev_player_id),'g'), 'player'+String(this._player_id)));
-            // 更新したのでprev_player_idを更新しておく
-            this._prev_player_id = this._player_id;
-        }
+        // // Player_IDを反映
+        // if (this._prev_player_id != this._player_id){
+        //     this.$result_html.find(".player_name").text("プレイヤー" + String(this._player_id));
+        //     this.$result_html.attr('id', 'result_player' + String(this._player_id));
+        //     var txt_res = this.$result_html.html();
+        //     this.$result_html.html(txt_res.replace(new RegExp("player"+String(this._prev_player_id),'g'), 'player'+String(this._player_id)));
+        //     // 更新したのでprev_player_idを更新しておく
+        //     this._prev_player_id = this._player_id;
+        // }
 
         // トークンの取得状況を更新
         var token_id = 1;
-        for (const color of colors) {
+        for (const color of COLORS) {
             if(this.tokens[color][0] == 1 && this.tokens[color][1] == 1 ){
 
                 if(token_id <= MAX_TOKENS){
@@ -142,7 +193,18 @@ class Player{
         // 点数表示を更新
         this.$result_html.find("#score_player" + String(this._player_id)).text(String(this.score) + "点");
 
-        // エラーの状況を更新
+        // アラートの状況を更新
+        // トークンの数を判定
+        var alert_code = 1 * (this.token_num > MAX_TOKENS) + 2 * (this.color_num > COLOR_PER_CARD * FINAL_HANDS) -1;
+        if(alert_code >= 0){
+            this.$result_html.find(".alert").prop("title", this.ALERT[alert_code]);
+            this.$result_html.find(".alert-svg").removeClass("my-template")
+        }
+        else{
+            this.$result_html.find(".alert-svg").addClass("my-template")
+        }
+
+
     }
 
 }
@@ -325,7 +387,7 @@ function add_player(){
         }
 
         // プレイヤーごとのをコピー
-        var tmp = $("#player1").clone(true);
+        var tmp = $("#playerX").clone(true);
 
         // 表示名変更
         tmp.find(".player-num").text("プレイヤー" + String(player_num));
@@ -333,7 +395,9 @@ function add_player(){
         // IDを変更
         tmp.attr('id', 'player' + String(player_num));
         txt = tmp.html();
-        tmp.html(txt.replace(/player1/g, 'player'+String(player_num)));
+        tmp.html(txt.replace(/playerX/g, 'player'+String(player_num)));
+        // my-template を削除
+        tmp.removeClass("my-template")
 
         // 表示
         tmp.appendTo("#players").hide().slideDown();
@@ -416,7 +480,7 @@ function sub_player(player_id){
 function calc_score() {
 
     var color_values = {RED:0, BLUE:0, GREEN:0, YELLOW:0, WHITE:0, BLACK:0};
-    for (const color of colors) {
+    for (const color of COLORS) {
 
         color_values[color] = Number(parseInt(document.getElementById(color).innerHTML));
     }
