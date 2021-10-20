@@ -209,6 +209,7 @@ body {
 .value-ref{
     font-size: 2.0rem;
     font-family: 'Noto Sans', sans-serif;
+    letter-spacing: -0.1rem;
 }
 
 /* プレイヤーN 表示 */
