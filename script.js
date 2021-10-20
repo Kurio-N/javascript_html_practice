@@ -102,7 +102,6 @@ class Player{
         var sum = 0;
 
         for (const color of COLORS){
-            console.log(color)
             sum += this.tokens[color][0] + this.tokens[color][1];
         }
 
