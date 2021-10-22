@@ -189,16 +189,22 @@ body {
 .value{
     font-family: 'Noto Sans', sans-serif;
     font-size: 4.0rem;
+    padding: 0;
+    margin: 0;
 }
 
 /* プラスボタンとマイナスボタン */
 .plusminus-value{
+    min-height: 0px;
     height: 75%;
     width: auto;
 }
 
 .plusminus-hand{
-    height: 45%;
+    position: absolute;
+    top:25%;
+    left: 25%;
+    height: 50%;
     width: auto;
 }
 
@@ -209,7 +215,7 @@ body {
 .value-ref{
     font-size: 1.8rem;
     font-family: 'Noto Sans', sans-serif;
-    /* letter-spacing: -0.2rem; */
+    /* letter-spacing: -0.1em; */
 }
 
 /* プレイヤーN 表示 */
